@@ -13,7 +13,7 @@ export default function () {
     const contentYears = new Set<string>([])
     const contentPaths = await queryContent().only(['_path']).find()
     for (const contentPath of contentPaths) {
-      if (!contentPath._path) continue
+      if (!contentPath._path || !contentPath._path.match(/^\/\d{4}\//)) continue
       const { pathYear } = parseContentPathYear(contentPath._path)
       contentYears.add(pathYear)
     }
