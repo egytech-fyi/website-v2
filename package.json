@@ -14,6 +14,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@antfu/eslint-config": "^2.20.0",
+    "@nuxt/eslint": "^0.3.13",
     "nuxt": "^3.11.2",
     "shadcn-docs-nuxt": "latest"
   }
