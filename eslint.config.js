@@ -1,5 +1,6 @@
 import antfu from '@antfu/eslint-config'
 import withNuxt from './.nuxt/eslint.config.mjs'
+import tailwind from 'eslint-plugin-tailwindcss'
 
 export default withNuxt(
   antfu(
@@ -20,5 +21,8 @@ export default withNuxt(
         ],
       },
     },
+    // Tailwind
+    ...tailwind.configs['flat/recommended'],
+    { rules: { 'tailwindcss/no-custom-classname': 'off' } },
   ),
 )
