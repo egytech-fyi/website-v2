@@ -15,6 +15,10 @@ export default {
       },
     },
     extend: {
+      // Our custom config
+      screens: { '2xs': '320px', xs: '480px' },
+
+      // Shadcn
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
