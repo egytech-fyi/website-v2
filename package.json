@@ -1,7 +1,12 @@
 {
-  "name": "shadcn-docs-nuxt-starter",
-  "private": true,
+  "name": "@egytech.fyi/website",
   "type": "module",
+  "packageManager": "pnpm@9.2.0",
+  "engines": {
+    "node": ">=20.12.2",
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -11,9 +16,6 @@
   },
   "dependencies": {
     "nuxt": "^3.11.2",
-    "vue": "^3.4.27",
-    "vue-router": "^4.3.2",
     "shadcn-docs-nuxt": "latest"
-  },
-  "packageManager": "pnpm@8.15.7+sha256.50783dd0fa303852de2dd1557cd4b9f07cb5b018154a6e76d0f40635d6cee019"
+  }
 }
