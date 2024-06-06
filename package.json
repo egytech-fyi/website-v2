@@ -11,7 +11,11 @@
     "dev": "nuxt dev --host",
     "build": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint . --cache",
+    "lint:fix": "pnpm lint --fix",
+    "format": "prettier . !pnpm-lock.yaml --check --cache",
+    "format:fix": "pnpm format --write"
   },
   "dependencies": {
     "@antfu/eslint-config": "^2.20.0",
