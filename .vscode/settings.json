@@ -1,7 +1,7 @@
 {
   // # ESLint
   "eslint.experimental.useFlatConfig": true, // Enable flat config
-  "editor.codeActionsOnSave": { "source.fixAll.eslint": "always" }, // Auto fix
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": "explicit" }, // Auto fix
   "eslint.validate": [
     "javascript",
     "javascriptreact",
