@@ -3,19 +3,21 @@ title: Home
 navigation: false
 ---
 
-::hero
----
+## ::hero
+
 announcement:
-  title: 'Release v0.1.3'
-  icon: 'noto:party-popper'
-  to: /getting-started
+title: 'Release v0.1.3'
+icon: 'noto:party-popper'
+to: /getting-started
 actions:
-  - name: Get Started
-    to: /getting-started
-  - name: GitHub
-    variant: outline
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
-    leftIcon: 'lucide:github'
+
+- name: Get Started
+  to: /getting-started
+- name: GitHub
+  variant: outline
+  to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
+  leftIcon: 'lucide:github'
+
 ---
 
 #title
