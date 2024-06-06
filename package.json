@@ -16,8 +16,10 @@
   "dependencies": {
     "@antfu/eslint-config": "^2.20.0",
     "@nuxt/eslint": "^0.3.13",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-tailwindcss": "^3.17.3",
     "nuxt": "^3.11.2",
+    "prettier": "^3.3.1",
     "shadcn-docs-nuxt": "latest"
   }
 }
