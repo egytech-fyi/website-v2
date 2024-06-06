@@ -62,6 +62,7 @@ export default defineAppConfig({
         },
       ],
     },
+    search: { enable: true },
     aside: {
       useLevel: true,
       collapse: false,
@@ -76,22 +77,12 @@ export default defineAppConfig({
       title: 'On This Page',
       links: [
         {
-          title: 'Star on GitHub',
-          icon: 'lucide:star',
-          to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
-          target: '_blank',
-        },
-        {
-          title: 'Create Issues',
-          icon: 'lucide:circle-dot',
-          to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt/issues',
+          title: 'Star us on GitHub',
+          icon: 'ph:star',
+          to: 'https://github.com/egytech-fyi',
           target: '_blank',
         },
       ],
-    },
-    search: {
-      enable: true,
-      inAside: false,
     },
   }),
 })
