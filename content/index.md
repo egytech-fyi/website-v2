@@ -1,30 +1,28 @@
 ---
-title: Home
+title: 'Ace Your Next Tech Offer Negotiation'
 navigation: false
 ---
 
 ::hero
 ---
 announcement:
-  title: 'Release v0.1.3'
-  icon: 'noto:party-popper'
+  title: '2024 Results are Out'
+  icon: 'ph:rocket-duotone'
   to: /getting-started
 actions:
-  - name: Get Started
+  - name: Dashboard
     to: /getting-started
-  - name: GitHub
-    variant: outline
-    to: https://github.com/ZTL-UwU/shadcn-docs-nuxt
-    leftIcon: 'lucide:github'
+    leftIcon: 'ph:chart-bar-duotone'
+  - name: Reports
+    to: /getting-started
+    leftIcon: 'ph:chart-pie-duotone'
+    variant: secondary
 ---
 
 #title
-Effortless and Beautiful<br>Docs Template.
+Ace Your Next Tech Offer Negotiation
 
 #description
-Beautifully designed Nuxt Content template with shadcn-vue.<br>Customizable. Compatible. Open Source.
+Discover Everything Tech in Egypt. We Are Your Ultimate Insights Hub!
 ::
 
-<div class="border rounded-lg shadow-md">
-  <iframe src="/getting-started/writing/components" height="700" width="100%" class="rounded-lg" scrolling="no" frameborder="0">
-</div>
