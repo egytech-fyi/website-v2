@@ -43,23 +43,21 @@ const defaultCodeIcon = {
 }
 
 export default defineAppConfig({
-  shadcnDocs: {
+  // @ts-expect-error False positive as `shadcnDocs` isn't providing the correct types
+  shadcnDocs: () => ({
     site: {
-      name: 'shadcn-docs-nuxt',
+      name: 'egytech.fyi',
     },
     header: {
-      title: 'shadcn-docs-starter',
+      title: 'egytech.fyi',
       showTitle: true,
       darkModeToggle: true,
-      logo: {
-        light: '/logo.svg',
-        dark: '/logo-dark.svg',
-      },
+      logo: { light: '/logo.svg', dark: '/logo.svg' },
       nav: [],
       links: [
         {
           icon: 'lucide:github',
-          to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
+          to: 'https://github.com/egytech-fyi',
           target: '_blank',
         },
       ],
@@ -72,16 +70,6 @@ export default defineAppConfig({
       breadCrumb: true,
       showTitle: true,
       codeIcon: defaultCodeIcon,
-    },
-    footer: {
-      credits: 'Copyright © 2024',
-      links: [
-        {
-          icon: 'lucide:github',
-          to: 'https://github.com/ZTL-UwU/shadcn-docs-nuxt',
-          target: '_blank',
-        },
-      ],
     },
     toc: {
       enable: true,
@@ -105,5 +93,5 @@ export default defineAppConfig({
       enable: true,
       inAside: false,
     },
-  },
+  }),
 })
