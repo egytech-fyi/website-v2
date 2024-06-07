@@ -1,0 +1,31 @@
+name: autofix.ci # Required (https://autofix.ci/setup)
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+
+permissions:
+  contents: read
+
+jobs:
+  autofix:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v4
+
+      - name: Setup (Install Node, pnpm, and dependencies)
+        uses: ./.github/actions/setup
+
+      - name: Format (Fix)
+        run: pnpm run format:fix
+
+      - name: Lint (Fix)
+        run: pnpm run lint:fix
+
+      - name: Autofix
+        uses: autofix-ci/action@v1.3
