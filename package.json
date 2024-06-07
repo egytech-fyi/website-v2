@@ -19,7 +19,6 @@
     "lint:fix": "pnpm lint --fix",
     "format": "prettier . !pnpm-lock.yaml --check --cache",
     "format:fix": "pnpm format --write",
-    "init": "shadcn-vue init",
     "add": "shadcn-vue add"
   },
   "dependencies": {
