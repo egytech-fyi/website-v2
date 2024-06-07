@@ -1,8 +1,10 @@
 {
   "name": "@egytech.fyi/website",
   "type": "module",
+  "version": "0.0.1",
   "packageManager": "pnpm@9.2.0",
   "description": "Ace Your Next Tech Offer Negotiation.",
+  "repository": "github.com:egytech-fyi/egytech-fyi",
   "engines": {
     "node": ">=20.12.2",
     "npm": "please-use-pnpm",
