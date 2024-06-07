@@ -12,7 +12,7 @@
       </h2>
 
       <p>
-        This initiative is powered by volunteers passionate about empowering
+        This initiative is powered by contributors passionate about empowering
         Egyptian tech professionals. We offer insights for tech salaries scene,
         helping you make informed career decisions.
       </p>
@@ -24,28 +24,28 @@
       </p>
 
       <UiLink
-        :to="landing.volunteerFormUrl"
+        :to="landing.contribution.formUrl"
         target="_blank"
         variant="secondary"
       >
         <Icon name="ph:users-duotone" class="size-5" />
-        <span class="ms-2">Volunteer</span>
+        <span class="ms-2">Contribute</span>
       </UiLink>
     </div>
 
     <ul class="grid grid-cols-2 justify-center gap-4 xs:grid-cols-4">
       <li
-        v-for="(volunteer, index) in landing.volunteers"
+        v-for="(contributor, index) in landing.contribution.contributors"
         :key="index"
         class="w-fit justify-self-center"
       >
         <UiTooltipProvider :delay-duration="20">
           <UiTooltip>
             <UiTooltipTrigger>
-              <NuxtLink :to="volunteer.link" target="_blank">
+              <NuxtLink :to="contributor.link" target="_blank">
                 <img
-                  :src="volunteer.image"
-                  :alt="volunteer.name"
+                  :src="contributor.image"
+                  :alt="contributor.name"
                   width="80"
                   height="80"
                   class="size-20 rounded"
@@ -54,7 +54,7 @@
             </UiTooltipTrigger>
 
             <UiTooltipContent>
-              <p>{{ volunteer.name }}</p>
+              <p>{{ contributor.name }}</p>
             </UiTooltipContent>
           </UiTooltip>
         </UiTooltipProvider>

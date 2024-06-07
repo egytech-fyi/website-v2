@@ -28,5 +28,5 @@ Discover Everything Tech in Egypt. We Are Your Ultimate Insights Hub!
 
 :LandingKeepUpWithMarket
 :LandingCards
-:LandingVolunteers
+:LandingContributors
 
