@@ -88,9 +88,6 @@ export default defineAppConfig({
 
   // @ts-expect-error False positive as `shadcnDocs` isn't providing the correct types
   shadcnDocs: () => ({
-    site: {
-      name: 'egytech.fyi',
-    },
     header: {
       title: 'egytech.fyi',
       showTitle: true,
