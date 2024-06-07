@@ -43,6 +43,34 @@ const defaultCodeIcon = {
 }
 
 export default defineAppConfig({
+  landing: {
+    participationFormUrl: `https://docs.google.com/forms/d/e/1FAIpQLSfBAjjgs14SQ9i3Dgo6BDPp-m7sxqHaUt4kFOghV-44knIUPg/viewform`,
+    stripeDonationUrl: 'https://buy.stripe.com/fZe17PcrCb5245G3cc',
+    volunteerFormUrl: `https://docs.google.com/forms/d/e/1FAIpQLSfKS-ZBzixfgOlsqpMEmn65_Em1Ek1-wOLXfhrXHORP9gsp0g/viewform?usp=sf_link`,
+    volunteers: [
+      {
+        name: 'Mahmoud Salem',
+        link: 'https://www.linkedin.com/in/mahsayedsalem/',
+        image: `https://media.licdn.com/dms/image/D4D03AQFrfwXJqWeyPQ/profile-displayphoto-shrink_200_200/0/1665492698888?e=2147483647&v=beta&t=Wae18SS9-9C1GM7ADQdZEiQbeq2S6mBZI6IVxvkosTc`,
+      },
+      {
+        name: 'Muhammad Mahmoud',
+        link: 'https://www.linkedin.com/in/MuhammadM1998/',
+        image: `https://media.licdn.com/dms/image/C4E03AQGFkvkd_R_1iw/profile-displayphoto-shrink_200_200/0/1640044080035?e=1721260800&v=beta&t=HBlUZXznT7_Aeank0e6OI8lky6fF05Dvgwc9a7WS00M`,
+      },
+      {
+        name: 'Abdelrahman El-Adawy',
+        link: 'https://www.linkedin.com/in/abdelrahman-el-adawy/',
+        image: `https://media.licdn.com/dms/image/C4D03AQEzBAxuGQyVaA/profile-displayphoto-shrink_200_200/0/1640658096118?e=2147483647&v=beta&t=U5yiQxnigYQdAJo0T0j7Kxnj5tTmNnVm9wpgo-05F7E`,
+      },
+      {
+        name: 'Ahmed El-Adawy',
+        link: 'https://www.linkedin.com/in/ahmed-eladawy-00b4a3115/',
+        image: `https://media.licdn.com/dms/image/D4D35AQFUiU2YRcflJA/profile-framedphoto-shrink_800_800/0/1699922152531?e=1716480000&v=beta&t=l0l_q1j31t9Adt88nLR5H0yOcbVXwdm5O21PKSgZsvI`,
+      },
+    ],
+  },
+
   // @ts-expect-error False positive as `shadcnDocs` isn't providing the correct types
   shadcnDocs: () => ({
     site: {
