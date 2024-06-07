@@ -1,24 +1,15 @@
 <script setup lang="ts">
   defineProps<{ isMobile: boolean }>()
-
-  const { navDirFromPath } = useContentHelpers()
-  const { navigation } = useContent()
   const config = useConfig()
-
-  const tree = computed(() => {
-    const route = useRoute()
-    const path = route.path.split('/')
-    if (config.value.aside.useLevel) {
-      const leveledPath = path.splice(0, 2).join('/')
-
-      const dir = navDirFromPath(leveledPath, navigation.value)
-      return dir ?? []
-    }
-
-    return navigation.value
-  })
-
   const path = useRoute().path
+
+  const { navigation } = useContent()
+  const { currentPathYear } = useContentDate()
+  const currentDirTree = computed(() => {
+    return navigation.value.find(
+      (dir: any) => dir.title === currentPathYear.value,
+    )
+  })
 </script>
 
 <template>
@@ -31,7 +22,7 @@
       <LayoutAsideYearSelector />
 
       <ul class="space-y-3">
-        <li v-for="(link, index) in tree" :key="index">
+        <li v-for="link in currentDirTree.children" :key="link._path">
           <NuxtLink
             :to="link._path"
             class="flex items-center gap-2"
