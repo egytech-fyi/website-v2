@@ -44,7 +44,11 @@
         data that drives meaningful change in the tech industry.
       </p>
 
-      <UiLink to="participate" class="card-cta gap-2" variant="outline">
+      <UiLink
+        to="/community/participate"
+        class="card-cta gap-2"
+        variant="outline"
+      >
         <span>Participate Now</span>
       </UiLink>
     </div>
