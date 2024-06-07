@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: 📖 Contribution Guide
-    url: https://egytech-fyi.pages.dev/contribute
+    url: https://egytech-fyi.pages.dev/community/contribute
     about: Check the guide if you want to contribute to this project.
+  - name: ✍️ Participate to the Survey
+    url: https://egytech-fyi.pages.dev/community/participate
+    about: Share your data with the community to help making a better tech scene in Egypt.
