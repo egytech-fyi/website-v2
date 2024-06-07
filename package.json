@@ -24,6 +24,7 @@
     "@iconify-json/ph": "^1.1.13",
     "@nuxt/eslint": "^0.3.13",
     "@nuxt/fonts": "^0.7.0",
+    "apexcharts": "^3.49.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-tailwindcss": "^3.17.3",
     "nuxt": "^3.11.2",
@@ -31,6 +32,7 @@
     "shadcn-docs-nuxt": "latest",
     "shadcn-nuxt": "^0.10.4",
     "shadcn-vue": "^0.10.5",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vue3-apexcharts": "^1.5.3"
   }
 }
