@@ -1,0 +1,15 @@
+name: 💬 Question
+description: Ask a question about the website or for a contribution advice.
+title: '[Question]: '
+labels: [question]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        If your question is related to contributiong to the project, please make sure that you have read through our [contribution guide](https://egytech-fyi.pages.dev/contribute).
+        
+  - type: textarea
+    attributes:
+      label: Description
+    validations:
+      required: true
