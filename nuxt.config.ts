@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 
   // SEO
   site: {
-    url: 'https://egytech.fyi/',
+    url: process.env.NODE_ENV === 'production' ? 'https://egytech.fyi' : '',
     name: 'egytech.fyi',
     description: `Explore the latest trends in the Egyptian tech market, analyze salaries, and get personalized negotiation strategies based on your CV.`,
     defaultLocale: 'en',
