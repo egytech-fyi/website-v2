@@ -6,7 +6,8 @@ export default defineNuxtConfig({
 
   // SEO
   site: {
-    url: process.env.NODE_ENV === 'production' ? 'https://egytech.fyi' : '',
+    // TODO: Set url in production to `https://egytech.fyi` when deployed
+    url: process.env.NODE_ENV === 'production' ? '' : '',
     name: 'egytech.fyi',
     description: `Explore the latest trends in the Egyptian tech market, analyze salaries, and get personalized negotiation strategies based on your CV.`,
     defaultLocale: 'en',
