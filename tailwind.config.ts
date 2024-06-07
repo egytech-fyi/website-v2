@@ -16,6 +16,7 @@ export default {
     },
     extend: {
       // Our custom config
+      fontFamily: { inter: ['Inter'] },
       screens: { '2xs': '320px', xs: '480px' },
 
       // Shadcn

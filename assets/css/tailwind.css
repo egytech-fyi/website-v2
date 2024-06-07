@@ -85,6 +85,6 @@
   }
 
   body {
-    @apply bg-background text-foreground min-h-dvh text-sm;
+    @apply bg-background text-foreground min-h-dvh text-sm font-inter;
   }
 }
