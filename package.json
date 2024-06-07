@@ -18,8 +18,7 @@
     "lint": "eslint . --cache",
     "lint:fix": "pnpm lint --fix",
     "format": "prettier . --check --cache",
-    "format:fix": "pnpm format --write",
-    "add": "shadcn-vue add"
+    "format:fix": "pnpm format --write"
   },
   "dependencies": {
     "@antfu/eslint-config": "^2.20.0",
@@ -35,7 +34,6 @@
     "prettier": "^3.3.1",
     "shadcn-docs-nuxt": "^0.1.3",
     "shadcn-nuxt": "^0.10.4",
-    "shadcn-vue": "^0.10.5",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.4.5",
     "vue3-apexcharts": "^1.5.3"
