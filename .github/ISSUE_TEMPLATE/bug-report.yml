@@ -1,0 +1,22 @@
+name: 🐞 Bug report
+description: Report a bug to help us improve the module.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before reporting a bug, please make sure that you have read through existing [issues](https://github.com/egytech-fyi/egytech-fyi/issues).
+
+  - type: textarea
+    attributes:
+      label: Description
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+
+  - type: checkboxes
+    attributes:
+      label: Additional information
+      description: Additional information that helps us decide how to proceed.
+      options:
+        - label: I intend to submit a PR to fix this bug.
