@@ -160,6 +160,8 @@
         v-if="config.aside.extraLinks?.length"
         class="space-y-3 border-t border-dashed py-3"
       >
+        <p class="font-medium">Extras</p>
+
         <li v-for="(link, index) in config.aside.extraLinks" :key="index">
           <NuxtLink
             :to="link.to"
