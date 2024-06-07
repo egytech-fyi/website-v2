@@ -108,12 +108,12 @@ export default defineAppConfig({
     search: { enable: true },
     aside: {
       extraLinks: [
-        {
-          title: 'Contribute',
-          icon: 'lucide:github',
-          to: 'https://github.com/egytech-fyi',
-          target: '_blank',
-        },
+        // {
+        //   title: 'Title',
+        //   icon: 'lucide:github',
+        //   to: 'https://github.com/egytech-fyi',
+        //   target: '_blank',
+        // },
       ],
     },
     main: {
