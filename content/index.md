@@ -8,13 +8,13 @@ navigation: false
 announcement:
   title: '2024 Results are Out'
   icon: 'ph:rocket-duotone'
-  to: /getting-started
+  to: /2024/dashboard
 actions:
   - name: Dashboard
-    to: /getting-started
+    to: /2024/dashboard
     leftIcon: 'ph:chart-bar-duotone'
-  - name: Reports
-    to: /getting-started
+  - name: Report
+    to: /2024/report
     leftIcon: 'ph:chart-pie-duotone'
     variant: secondary
 ---
