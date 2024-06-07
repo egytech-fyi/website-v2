@@ -5,7 +5,10 @@ export default function () {
     // The route will be in the form of `/<year>/<rest_of_the_path>`.
     // Removing the first slash then splitting by slash gives us an array of <year> <rest_of_the_path>
     const [pathYear, pathWithoutYear] = path.substring(1).split('/')
-    return { pathYear, pathWithoutYear }
+    return {
+      pathYear: isPathContainsYear(pathYear) ? pathYear : '',
+      pathWithoutYear,
+    }
   }
 
   // Finding available years by querying the `/content` folder
