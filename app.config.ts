@@ -64,8 +64,14 @@ export default defineAppConfig({
     },
     search: { enable: true },
     aside: {
-      useLevel: true,
-      collapse: false,
+      extraLinks: [
+        {
+          title: 'Contribute',
+          icon: 'lucide:github',
+          to: 'https://github.com/egytech-fyi',
+          target: '_blank',
+        },
+      ],
     },
     main: {
       breadCrumb: true,
