@@ -81,14 +81,6 @@ export default defineAppConfig({
     toc: {
       enable: true,
       title: 'On This Page',
-      links: [
-        {
-          title: 'Star us on GitHub',
-          icon: 'ph:star',
-          to: 'https://github.com/egytech-fyi',
-          target: '_blank',
-        },
-      ],
     },
   }),
 })
