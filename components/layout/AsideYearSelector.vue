@@ -1,14 +1,14 @@
 <script setup lang="ts">
   // Getting the available years to add them as options by querying the `/content` folder
-  const { getAvailableContentYears } = useContentDate()
+  const { getAvailableContentYears } = useContentDateUtils()
   const availableContentYears = await getAvailableContentYears()
 
   // Assigning the default value from current path year and fallback to latest available content year
-  const { currentPathYear } = useContentDate()
+  const { currentPathYear } = useContentDateUtils()
   const selectedYear = ref(currentPathYear.value || availableContentYears[0])
 
   // Updating the path on selecting a different year to show the corresponding content
-  const { currentPathWithoutYear } = useContentDate()
+  const { currentPathWithoutYear } = useContentDateUtils()
   function navigateToSelectedYearContent() {
     const newPath = `/${selectedYear.value}/${currentPathWithoutYear.value}`
     return navigateTo(newPath)

@@ -4,7 +4,7 @@
   const path = useRoute().path
 
   const { navigation } = useContent()
-  const { currentPathYear } = useContentDate()
+  const { currentPathYear } = useContentDateUtils()
   const currentDirTree = computed(() => {
     return navigation.value.find(
       (dir: any) => dir.title === currentPathYear.value,
