@@ -24,7 +24,7 @@
       </p>
 
       <UiLink
-        :to="landing.contribution.formUrl"
+        :to="landing.contribution.formLink"
         target="_blank"
         variant="secondary"
       >

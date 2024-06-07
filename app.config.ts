@@ -44,10 +44,22 @@ const defaultCodeIcon = {
 
 export default defineAppConfig({
   landing: {
-    participationFormUrl: `https://docs.google.com/forms/d/e/1FAIpQLSfBAjjgs14SQ9i3Dgo6BDPp-m7sxqHaUt4kFOghV-44knIUPg/viewform`,
-    stripeDonationUrl: 'https://buy.stripe.com/fZe17PcrCb5245G3cc',
+    participation:{
+      formLink:`https://docs.google.com/forms/d/e/1FAIpQLSfBAjjgs14SQ9i3Dgo6BDPp-m7sxqHaUt4kFOghV-44knIUPg/viewform`,
+    },
+    donation: {
+      stripe: {
+        link: 'https://buy.stripe.com/fZe17PcrCb5245G3cc'
+      },
+      instapay: {
+        ipa: 'mahsayedsalem',
+        link: '',
+        qrImage: '',
+        referenceNote: 'egytech',
+      },
+    },
     contribution: {
-      formUrl: `https://docs.google.com/forms/d/e/1FAIpQLSfKS-ZBzixfgOlsqpMEmn65_Em1Ek1-wOLXfhrXHORP9gsp0g/viewform?usp=sf_link`,
+      formLink: `https://docs.google.com/forms/d/e/1FAIpQLSfKS-ZBzixfgOlsqpMEmn65_Em1Ek1-wOLXfhrXHORP9gsp0g/viewform?usp=sf_link`,
       contributors: [
         {
           name: 'Mahmoud Salem',

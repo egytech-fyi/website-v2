@@ -45,7 +45,7 @@
       </p>
 
       <UiLink
-        :to="landing.participationFormUrl"
+        :to="landing.participation.formLink"
         target="_blank"
         class="card-cta gap-2"
         variant="outline"
@@ -74,7 +74,7 @@
       <div class="card-cta flex flex-col gap-2 xs:flex-row">
         <!-- Stripe -->
         <UiLink
-          :to="landing.stripeDonationUrl"
+          :to="landing.donation.stripe.link"
           target="_blank"
           class="justify-start gap-2"
           variant="outline"
@@ -100,10 +100,10 @@
             <p>
               Thanks for your donation! Kindly send to
               <span class="font-bold text-muted-foreground">
-                mahsayedsalem@instapay
+                {{landing.donation.instapay.ipa}}@instapay
               </span>
               and make sure to add
-              <span class="font-bold text-muted-foreground">egytech</span>
+              <span class="font-bold text-muted-foreground">{{landing.donation.instapay.referenceNote}}</span>
               in the reference notes.
             </p>
 
