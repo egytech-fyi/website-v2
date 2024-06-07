@@ -55,8 +55,8 @@
       </UiLink>
     </div>
 
-    <!-- Do you feel this is helpful? -->
-    <div class="card col-span-full">
+    <!-- Do you feel this is helpful? (Donation) -->
+    <div v-if="landing.donation.enabled" class="card col-span-full">
       <UiButton size="icon" variant="secondary" class="cursor-auto">
         <Icon name="ph:hand-arrow-down-duotone" class="size-5" />
       </UiButton>
@@ -100,10 +100,12 @@
             <p>
               Thanks for your donation! Kindly send to
               <span class="font-bold text-muted-foreground">
-                {{landing.donation.instapay.ipa}}@instapay
+                {{ landing.donation.instapay.ipa }}@instapay
               </span>
               and make sure to add
-              <span class="font-bold text-muted-foreground">{{landing.donation.instapay.referenceNote}}</span>
+              <span class="font-bold text-muted-foreground">
+                {{ landing.donation.instapay.referenceNote }}
+              </span>
               in the reference notes.
             </p>
 

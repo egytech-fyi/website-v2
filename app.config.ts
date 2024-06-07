@@ -48,6 +48,7 @@ export default defineAppConfig({
       formLink:`https://docs.google.com/forms/d/e/1FAIpQLSfBAjjgs14SQ9i3Dgo6BDPp-m7sxqHaUt4kFOghV-44knIUPg/viewform`,
     },
     donation: {
+      enabled: false,
       stripe: {
         link: 'https://buy.stripe.com/fZe17PcrCb5245G3cc'
       },
