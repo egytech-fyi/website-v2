@@ -2,6 +2,7 @@
   "name": "@egytech.fyi/website",
   "type": "module",
   "packageManager": "pnpm@9.2.0",
+  "description": "Ace Your Next Tech Offer Negotiation.",
   "engines": {
     "node": ">=20.12.2",
     "npm": "please-use-pnpm",
