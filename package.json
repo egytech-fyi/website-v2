@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "packageManager": "pnpm@9.2.0",
-  "description": "Ace Your Next Tech Offer Negotiation.",
+  "description": "Explore the latest trends in the Egyptian tech market, analyze salaries, and get personalized negotiation strategies based on your CV.",
   "repository": "github.com:egytech-fyi/egytech-fyi",
   "engines": {
     "node": ">=20.12.2",
