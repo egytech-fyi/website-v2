@@ -75,7 +75,7 @@ export default defineAppConfig({
         {
           name: 'Abdelrahman El-Adawy',
           link: 'https://www.linkedin.com/in/abdelrahman-el-adawy/',
-          image: `https://media.licdn.com/dms/image/C4D03AQEzBAxuGQyVaA/profile-displayphoto-shrink_200_200/0/1640658096118?e=2147483647&v=beta&t=U5yiQxnigYQdAJo0T0j7Kxnj5tTmNnVm9wpgo-05F7E`,
+          image: `https://media.licdn.com/dms/image/D4E03AQFRhZTipZ7QfA/profile-displayphoto-shrink_800_800/0/1717713353227?e=1723075200&v=beta&t=hjevSlh6AldUEIwh-FaoFBiqjYTr46jxTcKCtXl9FGY`,
         },
         {
           name: 'Ahmed El-Adawy',
