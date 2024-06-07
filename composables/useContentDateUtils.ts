@@ -39,7 +39,7 @@ export default function () {
   })
 
   const isInsideYearDir = computed(() => {
-    return isPathContainsYear(route.path)
+    return isPathContainsYear(currentPathYear.value)
   })
 
   return {
