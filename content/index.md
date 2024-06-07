@@ -1,5 +1,6 @@
 ---
 title: 'Ace Your Next Tech Offer Negotiation'
+description: 'Explore the latest trends in the Egyptian tech market, analyze salaries, and get personalized negotiation strategies based on your CV.'
 navigation: false
 ---
 
