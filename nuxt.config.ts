@@ -45,6 +45,11 @@ export default defineNuxtConfig({
           href: '/apple-touch-icon.png',
         },
       ],
+      // OG Image
+      meta: [
+        { property: 'og:image', content: '/og-image.png' },
+        { name: 'twitter:image', content: '/og-image.png' },
+      ],
     },
   },
 
