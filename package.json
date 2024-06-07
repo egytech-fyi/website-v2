@@ -17,7 +17,7 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint . --cache",
     "lint:fix": "pnpm lint --fix",
-    "format": "prettier . !pnpm-lock.yaml --check --cache",
+    "format": "prettier . --check --cache",
     "format:fix": "pnpm format --write",
     "add": "shadcn-vue add"
   },

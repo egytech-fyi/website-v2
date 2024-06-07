@@ -1,2 +1,5 @@
+# Lockfile
+pnpm-lock.yaml
+
 # MD, MDC, MDX files
 *.md*
