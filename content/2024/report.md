@@ -1,13 +1,12 @@
 ---
 title: Report
+description: This year, we got 1,729 responses, a 33% jump from last time when we got around 1,300. About 1,650 were valid, and roughly 1,200 were verified, where participants shared their company names or personal info! 
 icon: 'ph:chart-pie-duotone'
 ---
 
-## Overview
-
-This year, we got **1,729** responses, a **33%** jump from last time when we got around **1,300**. About **1,650** were valid, and roughly **1,200** were verified, where participants shared their company names or personal info!
-
-Here we're exploring the analysis of these answers. If you prefer to compare your salary with others first then [Access our Salary Dashboard](/2024/dashboard).
+::alert{icon="ph:info"}
+  Here we're exploring the analysis of these answers. If you prefer to compare your salary with others first then access our [Salary Dashboard](/2024/dashboard).
+::
 
 ### Gender
 
