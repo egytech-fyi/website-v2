@@ -66,7 +66,7 @@ export default defineAppConfig({
       {
         name: 'Ahmed El-Adawy',
         link: 'https://www.linkedin.com/in/ahmed-eladawy-00b4a3115/',
-        image: `https://media.licdn.com/dms/image/D4D35AQFUiU2YRcflJA/profile-framedphoto-shrink_800_800/0/1699922152531?e=1716480000&v=beta&t=l0l_q1j31t9Adt88nLR5H0yOcbVXwdm5O21PKSgZsvI`,
+        image: `https://media.licdn.com/dms/image/D4D35AQFUiU2YRcflJA/profile-framedphoto-shrink_800_800/0/1699922152531?e=1718370000&v=beta&t=3j9O3kklyv3n2F7YetBm38EaBxFaJoHcyI0n33u5D9s`,
       },
     ],
   },
