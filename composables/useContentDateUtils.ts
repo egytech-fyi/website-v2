@@ -11,14 +11,18 @@ export default function () {
   // Finding available years by querying the `/content` folder
   async function getAvailableContentYears() {
     const contentYears = new Set<string>([])
-    const contentPaths = await queryContent().only(['_path']).find()
+    const contentPaths = await queryContent().only(['_dir', '_path']).find()
     for (const contentPath of contentPaths) {
-      if (!contentPath._path || !contentPath._path.match(/^\/\d{4}\//)) continue
+      if (!contentPath._path || !isPathContainsYear(contentPath._dir)) continue
       const { pathYear } = parseContentPathYear(contentPath._path)
       contentYears.add(pathYear)
     }
 
     return Array.from(contentYears).reverse()
+  }
+
+  function isPathContainsYear(path: string) {
+    return /^\/?\d{4}$/.test(path)
   }
 
   const currentYear = new Date().getFullYear().toString()
@@ -37,5 +41,6 @@ export default function () {
     currentPathWithoutYear,
     parseContentPathYear,
     getAvailableContentYears,
+    isPathContainsYear,
   }
 }
