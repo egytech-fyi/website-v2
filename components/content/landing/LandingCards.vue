@@ -31,7 +31,7 @@
     <!-- Do you feel we need more accurate data? Participate to the initiative! -->
     <div class="card">
       <UiButton size="icon" variant="secondary" class="cursor-auto">
-        <Icon name="ph:hand-arrow-down-duotone" class="size-5" />
+        <Icon name="ph:pencil-simple-duotone" class="size-5" />
       </UiButton>
 
       <h3 class="card-heading">
@@ -45,13 +45,11 @@
       </p>
 
       <UiLink
-        :to="landing.participation.formLink"
-        target="_blank"
+        to="participate"
         class="card-cta gap-2"
         variant="outline"
       >
         <span>Participate Now</span>
-        <Icon name="ph:caret-right-duotone" class="size-5" />
       </UiLink>
     </div>
 

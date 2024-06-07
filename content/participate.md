@@ -1,7 +1,7 @@
 ---
 title: Participate
-Description: ''
-toc: false
+description: 'Share your data to the initiative!'
+icon: 'ph:pencil-simple-duotone'
 ---
 
-Dashboard Placeholder
+In Progress...

@@ -24,11 +24,10 @@
       </p>
 
       <UiLink
-        :to="landing.contribution.formLink"
-        target="_blank"
+        to="/contribute"
         variant="secondary"
       >
-        <Icon name="ph:users-duotone" class="size-5" />
+        <Icon name="i-ph-git-pull-request-duotone" class="size-5" />
         <span class="ms-2">Contribute</span>
       </UiLink>
     </div>

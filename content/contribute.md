@@ -1,7 +1,7 @@
 ---
 title: Contribute
-Description: ''
-toc: false
+description: 'Help improving egytech.fyi'
+icon: 'i-ph-git-pull-request-duotone'
 ---
 
-Dashboard Placeholder
+In Progress...
