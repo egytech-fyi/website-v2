@@ -16,17 +16,17 @@
 </script>
 
 <template>
-  <UISelect
+  <UiSelect
     id="content-year-selector"
     v-model="selectedYear"
     @update:model-value="navigateToSelectedYearContent"
   >
-    <UISelectTrigger class="[&>span]:overflow-visible">
-      <UISelectValue placeholder="Select a year" :value="2" />
-    </UISelectTrigger>
+    <UiSelectTrigger class="[&>span]:overflow-visible">
+      <UiSelectValue placeholder="Select a year" :value="2" />
+    </UiSelectTrigger>
 
-    <UISelectContent>
-      <UISelectItem
+    <UiSelectContent>
+      <UiSelectItem
         v-for="year in availableContentYears"
         :key="year"
         :value="year"
@@ -38,7 +38,7 @@
         >
           Latest
         </span>
-      </UISelectItem>
-    </UISelectContent>
-  </UISelect>
+      </UiSelectItem>
+    </UiSelectContent>
+  </UiSelect>
 </template>

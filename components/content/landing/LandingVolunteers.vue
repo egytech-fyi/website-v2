@@ -23,10 +23,14 @@
         Egyptian tech community. Help us build something you'll love.
       </p>
 
-      <UILink :to="landing.volunteerFormUrl" target="_blank" variant="secondary">
+      <UiLink
+        :to="landing.volunteerFormUrl"
+        target="_blank"
+        variant="secondary"
+      >
         <Icon name="ph:users-duotone" class="size-5" />
         <span class="ms-2">Volunteer</span>
-      </UILink>
+      </UiLink>
     </div>
 
     <ul class="grid grid-cols-2 justify-center gap-4 xs:grid-cols-4">
@@ -35,9 +39,9 @@
         :key="index"
         class="w-fit justify-self-center"
       >
-        <UITooltipProvider :delay-duration="20">
-          <UITooltip>
-            <UITooltipTrigger>
+        <UiTooltipProvider :delay-duration="20">
+          <UiTooltip>
+            <UiTooltipTrigger>
               <NuxtLink :to="volunteer.link" target="_blank">
                 <img
                   :src="volunteer.image"
@@ -47,13 +51,13 @@
                   class="size-20 rounded"
                 />
               </NuxtLink>
-            </UITooltipTrigger>
+            </UiTooltipTrigger>
 
-            <UITooltipContent>
+            <UiTooltipContent>
               <p>{{ volunteer.name }}</p>
-            </UITooltipContent>
-          </UITooltip>
-        </UITooltipProvider>
+            </UiTooltipContent>
+          </UiTooltip>
+        </UiTooltipProvider>
       </li>
     </ul>
   </section>

@@ -6,9 +6,9 @@
   <section class="grid grid-cols-1 gap-8 py-16 sm:grid-cols-2">
     <!-- Feeling underpaid because you lack accurate market data? -->
     <div class="card">
-      <UIButton size="icon" variant="secondary" class="cursor-auto">
+      <UiButton size="icon" variant="secondary" class="cursor-auto">
         <Icon name="ph:hand-arrow-down-duotone" class="size-5" />
-      </UIButton>
+      </UiButton>
 
       <h3 class="card-heading">
         Feeling underpaid because you lack accurate market data?
@@ -22,17 +22,17 @@
         tech career.
       </p>
 
-      <UILink class="card-cta gap-2" to="/2024/dashboard">
+      <UiLink class="card-cta gap-2" to="/2024/dashboard">
         <Icon name="ph:chart-bar-duotone" class="size-5" />
         <span>Access Dashboard</span>
-      </UILink>
+      </UiLink>
     </div>
 
     <!-- Do you feel we need more accurate data? Participate to the initiative! -->
     <div class="card">
-      <UIButton size="icon" variant="secondary" class="cursor-auto">
+      <UiButton size="icon" variant="secondary" class="cursor-auto">
         <Icon name="ph:hand-arrow-down-duotone" class="size-5" />
-      </UIButton>
+      </UiButton>
 
       <h3 class="card-heading">
         Do you feel we need more accurate data? Participate to the initiative!
@@ -44,7 +44,7 @@
         data that drives meaningful change in the tech industry.
       </p>
 
-      <UILink
+      <UiLink
         :to="landing.participationFormUrl"
         target="_blank"
         class="card-cta gap-2"
@@ -52,14 +52,14 @@
       >
         <span>Participate Now</span>
         <Icon name="ph:caret-right-duotone" class="size-5" />
-      </UILink>
+      </UiLink>
     </div>
 
     <!-- Do you feel this is helpful? -->
     <div class="card col-span-full">
-      <UIButton size="icon" variant="secondary" class="cursor-auto">
+      <UiButton size="icon" variant="secondary" class="cursor-auto">
         <Icon name="ph:hand-arrow-down-duotone" class="size-5" />
-      </UIButton>
+      </UiButton>
 
       <h3 class="card-heading">Do you feel this is helpful?</h3>
 
@@ -73,7 +73,7 @@
 
       <div class="card-cta flex flex-col gap-2 xs:flex-row">
         <!-- Stripe -->
-        <UILink
+        <UiLink
           :to="landing.stripeDonationUrl"
           target="_blank"
           class="justify-start gap-2"
@@ -81,22 +81,21 @@
         >
           <Icon name="ph:stripe-logo-duotone" class="size-5" />
           <span>Donate with Stripe</span>
-        </UILink>
+        </UiLink>
 
         <!-- Instapay -->
-
-        <UIDialog>
-          <UIDialogTrigger as-child>
-            <UIButton class="gap-2" variant="outline">
+        <UiDialog>
+          <UiDialogTrigger as-child>
+            <UiButton class="h-9 gap-2" variant="outline">
               <Icon name="InstapayDuotone" class="size-5" />
               <span>Donate with Instapay</span>
-            </UIButton>
-          </UIDialogTrigger>
+            </UiButton>
+          </UiDialogTrigger>
 
-          <UIDialogContent class="rounded-lg sm:max-w-[520px]">
-            <UIDialogHeader>
-              <UIDialogTitle>Donate with Instapay</UIDialogTitle>
-            </UIDialogHeader>
+          <UiDialogContent class="rounded-lg sm:max-w-[520px]">
+            <UiDialogHeader>
+              <UiDialogTitle>Donate with Instapay</UiDialogTitle>
+            </UiDialogHeader>
 
             <p>
               Thanks for your donation! Kindly send to
@@ -108,11 +107,11 @@
               in the reference notes.
             </p>
 
-            <UIDialogFooter>
-              <UIButton type="submit">Ok</UIButton>
-            </UIDialogFooter>
-          </UIDialogContent>
-        </UIDialog>
+            <UiDialogFooter>
+              <UiButton type="submit">Ok</UiButton>
+            </UiDialogFooter>
+          </UiDialogContent>
+        </UiDialog>
       </div>
     </div>
   </section>

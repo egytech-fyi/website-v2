@@ -14,10 +14,10 @@
         keeping pace with the devaluation of the Egyptian pound?
       </p>
 
-      <UILink :to="`/${currentYear}/report`" variant="secondary">
+      <UiLink :to="`/${currentYear}/report`" variant="secondary">
         <Icon name="ph:chart-pie-duotone" class="size-5" />
         <span class="ms-2">Read our Full Report</span>
-      </UILink>
+      </UiLink>
     </div>
 
     <ContentChartBarLine

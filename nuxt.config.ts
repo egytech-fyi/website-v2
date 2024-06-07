@@ -6,6 +6,4 @@ export default defineNuxtConfig({
 
   // Generate only Nuxt-specific rules as we're using `antfu/eslint-config` for other Vue & TS rules
   eslint: { config: { standalone: false } },
-
-  shadcn: { prefix: 'UI', componentDir: './components/ui' },
 })
