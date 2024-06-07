@@ -1,5 +1,7 @@
 name: ✨ Feature request
 description: Suggest a feature that will improve egytech.fyi website.
+title: '[Feature]: '
+labels: [feature]
 body:
   - type: markdown
     attributes:
