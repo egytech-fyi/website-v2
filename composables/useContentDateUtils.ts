@@ -38,10 +38,15 @@ export default function () {
     return parseContentPathYear(route.path).pathWithoutYear
   })
 
+  const isInsideYearDir = computed(() => {
+    return isPathContainsYear(route.path)
+  })
+
   return {
     currentYear,
     currentPathYear,
     currentPathWithoutYear,
+    isInsideYearDir,
     parseContentPathYear,
     getAvailableContentYears,
     isPathContainsYear,

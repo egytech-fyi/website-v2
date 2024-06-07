@@ -2,17 +2,22 @@
   defineProps<{ isMobile: boolean }>()
   const config = useConfig()
   const path = useRoute().path
-
   const { navigation } = useContent()
-  const { currentPathYear } = useContentDateUtils()
-  const currentYearTree = computed(() => {
-    return navigation.value.find(
-      (dir: any) => dir.title === currentPathYear.value,
-    )
+  const { isPathContainsYear } = useContentDateUtils()
+
+  const { currentPathYear, isInsideYearDir, getAvailableContentYears } =
+    useContentDateUtils()
+  const availableContentYears = await getAvailableContentYears()
+  const yearTree = computed(() => {
+    // Show current year tree if inside year dir, otherwise show the latest available year tree
+    const activeYear = isInsideYearDir.value
+      ? currentPathYear.value
+      : availableContentYears[0]
+
+    return navigation.value.find((dir: any) => dir.title === activeYear)
   })
 
   // Other files (not in year format or index page) tree
-  const { isPathContainsYear } = useContentDateUtils()
   const nonYearTree = computed(() => {
     return navigation.value.filter((dir: any) => !isPathContainsYear(dir._path))
   })
@@ -27,9 +32,9 @@
     <div class="space-y-4">
       <LayoutAsideYearSelector />
 
-      <!-- Current Year Tree -->
-      <ul class="space-y-3">
-        <li v-for="link in currentYearTree.children" :key="link._path">
+      <!-- Year Dir Tree -->
+      <ul v-if="yearTree" class="space-y-3">
+        <li v-for="link in yearTree.children" :key="link._path">
           <NuxtLink
             :to="link._path"
             class="flex items-center gap-2"
