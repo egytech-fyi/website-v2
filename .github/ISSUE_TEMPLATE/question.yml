@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         If your question is related to contributiong to the project, please make sure that you have read through our [contribution guide](https://egytech-fyi.pages.dev/contribute).
-        
+
   - type: textarea
     attributes:
       label: Description
