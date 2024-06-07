@@ -1,45 +1,6 @@
-# shadcn-docs-nuxt Minimal Starter
+[![egytech.fyi banner](./.github/assets/banner.png)](https://egytech.fyi)
 
-Starter template for [shadcn-docs-nuxt](https://github.com/ZTL-UwU/shadcn-docs-nuxt).
+# egytech.fyi website
 
-## Setup
+Explore the latest trends in the Egyptian tech market, analyze salaries, and get personalized negotiation strategies based on your CV.
 
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
