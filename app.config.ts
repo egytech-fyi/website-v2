@@ -44,13 +44,13 @@ const defaultCodeIcon = {
 
 export default defineAppConfig({
   landing: {
-    participation:{
-      formLink:`https://docs.google.com/forms/d/e/1FAIpQLSfBAjjgs14SQ9i3Dgo6BDPp-m7sxqHaUt4kFOghV-44knIUPg/viewform`,
+    participation: {
+      formLink: `https://docs.google.com/forms/d/e/1FAIpQLSfBAjjgs14SQ9i3Dgo6BDPp-m7sxqHaUt4kFOghV-44knIUPg/viewform`,
     },
     donation: {
       enabled: false,
       stripe: {
-        link: 'https://buy.stripe.com/fZe17PcrCb5245G3cc'
+        link: 'https://buy.stripe.com/fZe17PcrCb5245G3cc',
       },
       instapay: {
         ipa: 'mahsayedsalem',

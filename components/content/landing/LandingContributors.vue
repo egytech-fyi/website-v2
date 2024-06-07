@@ -23,10 +23,7 @@
         Egyptian tech community. Help us build something you'll love.
       </p>
 
-      <UiLink
-        to="/contribute"
-        variant="secondary"
-      >
+      <UiLink to="/contribute" variant="secondary">
         <Icon name="i-ph-git-pull-request-duotone" class="size-5" />
         <span class="ms-2">Contribute</span>
       </UiLink>
