@@ -5,7 +5,7 @@ export default {
   darkMode: 'selector',
   safelist: ['dark'],
   prefix: '',
-  content: [],
+  content: ['./content/**/*.md'],
   theme: {
     container: {
       center: true,
