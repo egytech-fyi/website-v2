@@ -425,7 +425,6 @@ Around 37% of the participants with more than one year of experience, changed co
 
 <ContentChartBarLine
   title='Average Engineering Salaries with 3-5 Years of Experience'
-  height='400'
   :labels='["2017", "2021", "2022", "2024"]'
   bar-title='Salary in Thousand (EGP)'
   bar-axis-label-prefix='K'

@@ -151,8 +151,9 @@
       </p>
 
       <VueApexCharts
-        v-bind="$attrs"
         id="egytech-apex-chart"
+        height="400"
+        v-bind="$attrs"
         :options="mergedOptions"
       />
     </div>
