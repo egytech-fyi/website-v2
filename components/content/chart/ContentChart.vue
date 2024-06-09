@@ -86,6 +86,7 @@
   })
 
   // Default Options (To be merged with the passed `options` prop)
+  // @ts-expect-error TODO: Fix types
   const defaultOptions = computed<ApexOptions>(() => ({
     chart: {
       fontFamily: 'Inter',
