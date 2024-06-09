@@ -1,4 +1,5 @@
 <script setup lang="ts">
+  import { defu } from 'defu'
   import type { ApexOptions } from 'apexcharts'
   const {
     labels = [],
@@ -10,11 +11,13 @@
     options?: ApexOptions
   }>()
 
-  const mergedOptions = computed<ApexOptions>(() => ({
-    chart: { type: 'line' },
-    xaxis: { categories: labels },
-    ...options,
-  }))
+  // @ts-expect-error todo: fix types
+  const mergedOptions = computed<ApexOptions>(() =>
+    defu(options, {
+      chart: { type: 'line' },
+      xaxis: { categories: labels },
+    }),
+  )
 </script>
 
 <template>
