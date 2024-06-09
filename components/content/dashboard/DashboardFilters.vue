@@ -3,7 +3,7 @@
     personal: {
       title: 'frontend',
       salary: '',
-      yearsOfExperience: { from: '', to: '' },
+      yearsOfExperience: { from: 0, to: 0 },
       currentLevel: '',
       gender: '',
       programmingLanguage: '',
@@ -71,42 +71,45 @@
 
         <!-- Years of Experience -->
         <div class="grid w-full max-w-full items-center gap-1.5">
-          <UiLabel class="font-normal" for="salary">
-            Years of Experience
-          </UiLabel>
+          <UiLabel class="font-normal">Years of Experience</UiLabel>
 
-          <div class="flex items-center gap-2">
-            <!-- From -->
-            <div class="relative">
-              <span
-                class="absolute inset-y-0 start-0 flex items-center justify-center px-2 text-muted-foreground"
-              >
-                From
-              </span>
+          <!-- From -->
+          <div class="flex items-center gap-1">
+            <UiLabel class="min-w-[4ch] font-normal text-muted-foreground">
+              From
+            </UiLabel>
+            <UiNumberField
+              id="yoeFrom"
+              v-model="filters.personal.yearsOfExperience.from"
+              :default-value="0"
+              :min="0"
+              :max="filters.personal.yearsOfExperience.to - 1"
+            >
+              <UiNumberFieldContent>
+                <UiNumberFieldDecrement />
+                <UiNumberFieldInput />
+                <UiNumberFieldIncrement />
+              </UiNumberFieldContent>
+            </UiNumberField>
+          </div>
 
-              <UiInput
-                id="yearsOfExperienceFrom"
-                v-model.trim="filters.personal.yearsOfExperience.from"
-                type="text"
-                class="ps-12"
-              />
-            </div>
-
-            <!-- To -->
-            <div class="relative">
-              <span
-                class="absolute inset-y-0 start-0 flex items-center justify-center px-2 text-muted-foreground"
-              >
-                To
-              </span>
-
-              <UiInput
-                id="yearsOfExperienceTo"
-                v-model.trim="filters.personal.yearsOfExperience.to"
-                type="text"
-                class="ps-8"
-              />
-            </div>
+          <!-- To -->
+          <div class="flex items-center gap-1">
+            <UiLabel class="min-w-[4ch] font-normal text-muted-foreground">
+              To
+            </UiLabel>
+            <UiNumberField
+              id="yoeTo"
+              v-model="filters.personal.yearsOfExperience.to"
+              :default-value="filters.personal.yearsOfExperience.from + 1"
+              :min="filters.personal.yearsOfExperience.from + 1"
+            >
+              <UiNumberFieldContent>
+                <UiNumberFieldDecrement />
+                <UiNumberFieldInput />
+                <UiNumberFieldIncrement />
+              </UiNumberFieldContent>
+            </UiNumberField>
           </div>
         </div>
 
