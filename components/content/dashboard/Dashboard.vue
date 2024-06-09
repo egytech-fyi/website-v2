@@ -2,9 +2,6 @@
 
 <template>
   <div class="space-y-16">
-    <!-- Filters -->
-    <DashboardFilters />
-
     <!-- Salaries Percentile -->
     <div class="space-y-4">
       <ProseH3>Salaries Percentile</ProseH3>

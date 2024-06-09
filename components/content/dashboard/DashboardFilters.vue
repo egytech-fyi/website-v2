@@ -20,36 +20,27 @@
       remote: false,
     },
   })
-
-  const isOpen = ref(true)
 </script>
 
 <template>
-  <UiCollapsible v-model:open="isOpen" class="space-y-4">
+  <div class="space-y-4">
     <div class="flex items-center justify-between gap-2">
-      <ProseH3>Filters</ProseH3>
+      <p class="text-base font-semibold">Filters</p>
 
       <div class="flex items-center gap-2">
-        <UiButton class="h-9 gap-2" variant="outline">
+        <UiButton class="h-9 gap-2" variant="outline" size="xs">
           <Icon name="ph:arrow-clockwise-duotone" class="size-5" />
           <span>Reset</span>
         </UiButton>
-
-        <UiCollapsibleTrigger as-child>
-          <UiButton class="h-9 gap-2" variant="outline">
-            <Icon name="ph:caret-up-down-duotone" class="size-5" />
-            <span>{{ isOpen ? 'Hide' : 'Show' }}</span>
-          </UiButton>
-        </UiCollapsibleTrigger>
       </div>
     </div>
 
-    <UiCollapsibleContent class="space-y-3">
+    <div class="mt-4 space-y-3">
       <!-- Personal & Company Filters -->
-      <div class="grid grid-cols-[repeat(auto-fit,_minmax(180px,_1fr))] gap-3">
+      <div class="grid grid-cols-[repeat(auto-fit,_minmax(180px,_1fr))] gap-6">
         <!-- Title -->
         <div class="grid w-full max-w-full items-center gap-1.5">
-          <UiLabel for="title">Title (TODO)</UiLabel>
+          <UiLabel class="font-normal" for="title">Title (TODO)</UiLabel>
 
           <UiInput
             id="title"
@@ -61,7 +52,7 @@
 
         <!-- Salary -->
         <div class="grid w-full max-w-full items-center gap-1.5">
-          <UiLabel for="salary">Salary</UiLabel>
+          <UiLabel class="font-normal" for="salary">Salary</UiLabel>
 
           <div class="relative">
             <UiInput
@@ -80,7 +71,9 @@
 
         <!-- Years of Experience -->
         <div class="grid w-full max-w-full items-center gap-1.5">
-          <UiLabel for="salary">Years of Experience</UiLabel>
+          <UiLabel class="font-normal" for="salary">
+            Years of Experience
+          </UiLabel>
 
           <div class="flex items-center gap-2">
             <!-- From -->
@@ -119,7 +112,9 @@
 
         <!-- Current Level -->
         <div class="grid w-full max-w-full items-center gap-1.5">
-          <UiLabel for="currentLevel">Current Level</UiLabel>
+          <UiLabel class="font-normal" for="currentLevel">
+            Current Level
+          </UiLabel>
 
           <UiSelect id="currentLevel" v-model="filters.personal.currentLevel">
             <UiSelectTrigger class="w-full">
@@ -148,7 +143,7 @@
 
         <!-- Gender -->
         <div class="grid w-full max-w-full items-center gap-1.5">
-          <UiLabel for="gender">Gender</UiLabel>
+          <UiLabel class="font-normal" for="gender">Gender</UiLabel>
 
           <UiSelect id="gender" v-model="filters.personal.gender">
             <UiSelectTrigger class="w-full">
@@ -164,7 +159,9 @@
 
         <!-- Programming Language -->
         <div class="grid w-full max-w-full items-center gap-1.5">
-          <UiLabel for="programmingLanguage">Programming Language</UiLabel>
+          <UiLabel class="font-normal" for="programmingLanguage">
+            Programming Language
+          </UiLabel>
 
           <UiSelect
             id="programmingLanguage"
@@ -193,7 +190,9 @@
 
         <!-- CS Major -->
         <div class="grid w-full max-w-full items-center gap-1.5">
-          <UiLabel for="csMajor">Are you a CS Major</UiLabel>
+          <UiLabel class="font-normal" for="csMajor">
+            Are you a CS Major
+          </UiLabel>
 
           <UiSelect id="csMajor" v-model="filters.personal.csMajor">
             <UiSelectTrigger class="w-full">
@@ -209,7 +208,9 @@
 
         <!-- Company Business Line -->
         <div class="grid w-full max-w-full items-center gap-1.5">
-          <UiLabel for="companyBusinessLine">Company Business Line</UiLabel>
+          <UiLabel class="font-normal" for="companyBusinessLine">
+            Company Business Line
+          </UiLabel>
 
           <UiSelect
             id="companyBusinessLine"
@@ -229,7 +230,9 @@
 
         <!-- Company Business Focus -->
         <div class="grid w-full max-w-full items-center gap-1.5">
-          <UiLabel for="companyBusinessFocus">Company Business Focus</UiLabel>
+          <UiLabel class="font-normal" for="companyBusinessFocus">
+            Company Business Focus
+          </UiLabel>
 
           <UiSelect
             id="companyBusinessFocus"
@@ -248,7 +251,9 @@
 
         <!-- Company Business Size -->
         <div class="grid w-full max-w-full items-center gap-1.5">
-          <UiLabel for="companyBusinessSize">Company Business Size</UiLabel>
+          <UiLabel class="font-normal" for="companyBusinessSize">
+            Company Business Size
+          </UiLabel>
 
           <UiSelect
             id="companyBusinessSize"
@@ -272,7 +277,9 @@
 
         <!-- Company Business Market -->
         <div class="grid w-full max-w-full items-center gap-1.5">
-          <UiLabel for="companyBusinessMarket">Company Business Market</UiLabel>
+          <UiLabel class="font-normal" for="companyBusinessMarket">
+            Company Business Market
+          </UiLabel>
 
           <UiSelect
             id="companyBusinessMarket"
@@ -301,7 +308,7 @@
           />
           <UiLabel
             for="participantsRelocated"
-            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            class="cursor-pointer text-sm font-normal peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
             Include Relocated Participants
           </UiLabel>
@@ -315,12 +322,12 @@
           />
           <UiLabel
             for="participantsRemote"
-            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            class="cursor-pointer text-sm font-normal peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
             Include Participants Working Remotely for non-egyptian companies
           </UiLabel>
         </div>
       </div>
-    </UiCollapsibleContent>
-  </UiCollapsible>
+    </div>
+  </div>
 </template>

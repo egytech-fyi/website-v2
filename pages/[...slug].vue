@@ -66,7 +66,11 @@
             <div
               class="sticky top-[90px] h-[calc(100vh-3.5rem)] overflow-hidden"
             >
-              <LayoutToc :is-small="false" />
+              <LayoutDashboardFilters
+                v-if="page.dashboard?.enable"
+                :is-small="false"
+              />
+              <LayoutToc v-else :is-small="false" />
             </div>
           </div>
         </main>

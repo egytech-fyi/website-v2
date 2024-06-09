@@ -2,6 +2,8 @@
 title: Dashboard
 description: ''
 icon: 'ph:chart-bar-duotone'
+dashboard:
+ enable: true
 ---
 
 This year, we've crafted an awesome dashboard to help you pinpoint your spot in the market and see how salaries stack up among participants. Once you've added your job title and salary, you'll unlock a treasure trove of filters to fine-tune your search and discover your true market value! 💼✨
