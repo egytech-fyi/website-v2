@@ -45,7 +45,6 @@
   },
   "lint-staged": {
     "*": [
-      "pnpm lint:fix",
       "pnpm format:fix"
     ]
   }
