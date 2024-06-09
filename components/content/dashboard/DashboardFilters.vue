@@ -1,7 +1,7 @@
 <script setup lang="ts">
   const filters = ref({
     personal: {
-      title: 'frontend',
+      titles: [],
       salary: '',
       yearsOfExperience: { from: 0, to: 0 },
       currentLevel: '',
@@ -20,6 +20,35 @@
       remote: false,
     },
   })
+
+  const titlesOptions = [
+    { label: 'Frontend Engineer', value: '1' },
+    { label: 'Backend Engineer', value: '2' },
+    { label: 'Full-Stack Engineer', value: '3' },
+    {
+      label: `Hardware Engineer (Semiconductors, Digital Design, Electronics, etc)`,
+      value: 'hardware',
+    },
+    { label: 'AI & Automation Engineer', value: '4' },
+    { label: 'Embedded Systems Engineer', value: '5' },
+    { label: 'Mobile Development Engineer', value: '6' },
+    { label: 'Security/Network Engineer', value: '7' },
+    { label: 'DevOps / SRE / Platform', value: '8' },
+    { label: 'QA / SDET Engineer', value: '9' },
+    { label: 'CRM Developer', value: '10' },
+    { label: 'Data Analytics', value: '11' },
+    { label: 'Data Engineer', value: '12' },
+    { label: 'Data Scientist', value: '13' },
+    { label: 'Engineering Manager', value: '14' },
+    { label: 'Executive (C-level, director, etc.)', value: '15' },
+    { label: 'UI/UX Designer/Engineer', value: '16' },
+    { label: 'Product Manager', value: '17' },
+    { label: 'Product Owner', value: '18' },
+    { label: 'Scrum Master', value: '19' },
+    { label: 'R&D Engineer (Computer Vision, NLP, etc.)', value: '20' },
+    { label: 'Systems Architect', value: '21' },
+    { label: 'Technical Support', value: '22' },
+  ]
 </script>
 
 <template>
@@ -40,13 +69,11 @@
       <div class="grid grid-cols-[repeat(auto-fit,_minmax(180px,_1fr))] gap-6">
         <!-- Title -->
         <div class="grid w-full max-w-full items-center gap-1.5">
-          <UiLabel class="font-normal" for="title">Title (TODO)</UiLabel>
-
-          <UiInput
-            id="title"
-            v-model.trim="filters.personal.title"
-            type="text"
-            class="pe-10"
+          <UiLabel class="font-normal" for="title">Title</UiLabel>
+          <UiTagsCombobox
+            v-model="filters.personal.titles"
+            :options="titlesOptions"
+            placeholder="Search or select"
           />
         </div>
 
