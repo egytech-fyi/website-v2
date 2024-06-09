@@ -336,39 +336,35 @@
 
       <div class="space-y-8 text-center">
         <div>
-          <p class="text-4xl font-bold text-accent-foreground">20,000 EGP</p>
-          <p class="text-2xl">Median</p>
+          <p class="text-4xl font-bold">20,000 EGP</p>
+          <p class="text-2xl text-muted-foreground">Median</p>
         </div>
 
         <ul
           class="grid w-full grid-cols-1 gap-3 2xs:grid-cols-2 xs:grid-cols-4"
         >
-          <li class="flex flex-col gap-1.5">
-            <span
-              class="h-1.5 w-full rounded-full bg-accent-foreground/40"
-            ></span>
+          <li class="flex flex-col gap-1">
+            <span class="h-1.5 w-full rounded-full bg-muted-foreground/40" />
             <p class="font-semibold">13K EGP</p>
-            <span>20TH %</span>
+            <span class="text-muted-foreground">20TH %</span>
           </li>
 
-          <li class="flex flex-col gap-1.5">
-            <span
-              class="h-1.5 w-full rounded-full bg-accent-foreground/60"
-            ></span>
+          <li class="flex flex-col gap-1">
+            <span class="h-1.5 w-full rounded-full bg-muted-foreground/60" />
             <p class="font-semibold">13K EGP</p>
-            <span>20TH %</span>
+            <span class="text-muted-foreground">20TH %</span>
           </li>
 
-          <li class="flex flex-col gap-1.5">
-            <span class="h-1.5 w-full rounded-full bg-accent-foreground"></span>
+          <li class="flex flex-col gap-1">
+            <span class="h-1.5 w-full rounded-full bg-muted-foreground" />
             <p class="font-semibold">13K EGP</p>
-            <span>20TH %</span>
+            <span class="text-muted-foreground">20TH %</span>
           </li>
 
-          <li class="flex flex-col gap-1.5">
-            <span class="h-1.5 w-full rounded-full bg-accent"></span>
+          <li class="flex flex-col gap-1">
+            <span class="h-1.5 w-full rounded-full bg-muted" />
             <p class="font-semibold">71</p>
-            <span>Participants</span>
+            <span class="text-muted-foreground">Participants</span>
           </li>
         </ul>
 
