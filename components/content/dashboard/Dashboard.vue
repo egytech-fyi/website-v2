@@ -29,7 +29,7 @@
     <!-- Filters -->
     <UiCollapsible v-model:open="isOpen" class="space-y-4">
       <div class="flex items-center justify-between gap-2">
-        <p class="text-2xl font-semibold">Filters</p>
+        <ProseH3>Filters</ProseH3>
 
         <div class="flex items-center gap-2">
           <UiButton class="h-9 gap-2" variant="outline">
@@ -332,7 +332,7 @@
 
     <!-- Salaries Percentile -->
     <div class="space-y-4">
-      <p class="text-2xl font-semibold">Salaries Percentile</p>
+      <ProseH3>Salaries Percentile</ProseH3>
 
       <div class="space-y-8 text-center">
         <div>
@@ -392,9 +392,7 @@
     <!-- Salary Range Distribution  -->
     <div class="space-y-4">
       <div>
-        <p class="text-2xl font-semibold">
-          Salary Range Distribution Among Participants
-        </p>
+        <ProseH3>Salary Range Distribution Among Participants</ProseH3>
         <p class="text-muted-foreground">
           Identify your position in salary spectrum
         </p>
@@ -443,7 +441,7 @@
     <!-- Gender Salary Comparison -->
     <div class="space-y-4">
       <div>
-        <p class="text-2xl font-semibold">Gender Salary Comparison</p>
+        <ProseH3>Gender Salary Comparison</ProseH3>
         <p class="text-muted-foreground">
           Exploring Salaries disparities between genders
         </p>
