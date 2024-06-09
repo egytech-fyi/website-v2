@@ -48,8 +48,9 @@
         v-for="item in selectedOptions"
         :key="item"
         :value="item"
+        class="h-auto"
       >
-        <UiTagsInputItemText />
+        <UiTagsInputItemText class="line-clamp-2" />
         <UiTagsInputItemDelete />
       </UiTagsInputItem>
     </div>
