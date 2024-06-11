@@ -1,14 +1,6 @@
 <script setup lang="ts">
   const { getDashboardData } = useDashboard()
   const { data } = await getDashboardData()
-
-  const salaryRangeDistribution = computed(() => {
-    if (!data.value) return { labels: [], count: [] }
-
-    const labels = data.value.buckets.map((bucket) => bucket.bucket)
-    const count = data.value.buckets.map((bucket) => bucket.count)
-    return { labels, count }
-  })
 </script>
 
 <template>
@@ -82,11 +74,11 @@
       </div>
 
       <ContentChartBar
-        :labels="salaryRangeDistribution.labels"
+        :labels="data.salaryRangeDistribution.labels"
         :series="[
           {
             name: 'Number of Participants',
-            data: salaryRangeDistribution.count,
+            data: data.salaryRangeDistribution.count,
           },
         ]"
       />
