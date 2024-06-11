@@ -136,13 +136,13 @@ function getGenderPercentagesArray(
   genderData: DashboardData,
   allData: DashboardData,
 ) {
-  const baseGenderPercentages = allData.buckets.map(({ bucket, count }) => {
-    const isGenderBucketFound = genderData.buckets.some(
+  const baseGenderPercentages = allData.buckets.map(({ bucket }) => {
+    const genderBucket = genderData.buckets.find(
       (genderBucket) => genderBucket.bucket === bucket,
     )
 
-    return isGenderBucketFound
-      ? +((count / allData.stats.totalCount) * 100).toPrecision(3)
+    return genderBucket
+      ? +((genderBucket.count / allData.stats.totalCount) * 100).toPrecision(3)
       : 0
   })
 
