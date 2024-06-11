@@ -1,25 +1,25 @@
 <script setup lang="ts">
-  const filters = ref({
+  const filters = useState('dashboard-filters', () => ({
     personal: {
       titles: [],
       salary: '',
       yearsOfExperience: { from: 0, to: 0 },
-      currentLevel: '',
+      level: '',
       gender: '',
       programmingLanguage: '',
-      csMajor: '',
+      csDegree: '',
     },
     company: {
-      businessFocus: '',
       businessLine: '',
+      businessFocus: '',
       businessSize: '',
       businessMarket: '',
     },
     participants: {
       relocated: false,
-      remote: false,
+      remoteAbroad: false,
     },
-  })
+  }))
 
   const titlesOptions = [
     { label: 'Frontend Engineer', value: '1' },
@@ -140,13 +140,11 @@
           </div>
         </div>
 
-        <!-- Current Level -->
+        <!-- Level -->
         <div class="grid w-full max-w-full items-center gap-1.5">
-          <UiLabel class="font-normal" for="currentLevel">
-            Current Level
-          </UiLabel>
+          <UiLabel class="font-normal" for="level">Level</UiLabel>
 
-          <UiSelect id="currentLevel" v-model="filters.personal.currentLevel">
+          <UiSelect id="level" v-model="filters.personal.level">
             <UiSelectTrigger class="w-full">
               <UiSelectValue placeholder="Nothing selected" />
             </UiSelectTrigger>
@@ -220,11 +218,11 @@
 
         <!-- CS Major -->
         <div class="grid w-full max-w-full items-center gap-1.5">
-          <UiLabel class="font-normal" for="csMajor">
+          <UiLabel class="font-normal" for="csDegree">
             Are you a CS Major
           </UiLabel>
 
-          <UiSelect id="csMajor" v-model="filters.personal.csMajor">
+          <UiSelect id="csDegree" v-model="filters.personal.csDegree">
             <UiSelectTrigger class="w-full">
               <UiSelectValue placeholder="Nothing selected" />
             </UiSelectTrigger>
@@ -344,14 +342,14 @@
           </UiLabel>
         </div>
 
-        <!-- Remote -->
+        <!-- Remote Abroad -->
         <div class="flex items-center space-x-2">
           <UiCheckbox
-            id="participantsRemote"
-            v-model:checked="filters.participants.remote"
+            id="participantsRemoteAbroad"
+            v-model:checked="filters.participants.remoteAbroad"
           />
           <UiLabel
-            for="participantsRemote"
+            for="participantsRemoteAbroad"
             class="cursor-pointer text-sm font-normal peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
             Include Participants Working Remotely for non-egyptian companies

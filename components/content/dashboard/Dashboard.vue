@@ -1,4 +1,37 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  const filters = useState('dashboard-filters')
+
+  const filtersParams = computed(() => ({
+    title: filters.value.personal.titles,
+    salary: filters.value.personal.salary,
+    yoeFrom: filters.value.personal.yearsOfExperience.from,
+    yoeTo: filters.value.personal.yearsOfExperience.to,
+    level: filters.value.personal.level,
+    gender: filters.value.personal.gender,
+    programming_language: filters.value.personal.programmingLanguage,
+    cs_degree: filters.value.personal.csDegree,
+    business_line: filters.value.company.businessLine,
+    business_focus: filters.value.company.businessLine,
+    business_size: filters.value.company.businessLine,
+    business_market: filters.value.company.businessLine,
+    include_relocated: filters.value.participants.relocated,
+    include_remote_abroad: filters.value.participants.remoteAbroad,
+  }))
+
+  const { data } = await useFetch('https://api.egytech.fyi/stats', {
+    params: filtersParams,
+  })
+
+  const salaryRangeDistribution = computed(() => {
+    const labels = data.value.buckets.map((bucket) => bucket.bucket)
+    const count = data.value.buckets.map((bucket) => bucket.count)
+
+    return {
+      labels,
+      count,
+    }
+  })
+</script>
 
 <template>
   <div class="space-y-16">
@@ -8,7 +41,7 @@
 
       <div class="space-y-8 text-center">
         <div>
-          <p class="text-4xl font-bold">20,000 EGP</p>
+          <p class="text-4xl font-bold">{{ data.stats.median }} EGP</p>
           <p class="text-2xl text-muted-foreground">Median</p>
         </div>
 
@@ -17,25 +50,25 @@
         >
           <li class="flex flex-col gap-1">
             <span class="h-1.5 w-full rounded-full bg-muted-foreground/40" />
-            <p class="font-semibold">13K EGP</p>
+            <p class="font-semibold">{{ data.stats.p20Compensation }} EGP</p>
             <span class="text-muted-foreground">20TH %</span>
           </li>
 
           <li class="flex flex-col gap-1">
             <span class="h-1.5 w-full rounded-full bg-muted-foreground/60" />
-            <p class="font-semibold">13K EGP</p>
-            <span class="text-muted-foreground">20TH %</span>
+            <p class="font-semibold">{{ data.stats.p75Compensation }} EGP</p>
+            <span class="text-muted-foreground">75TH %</span>
           </li>
 
           <li class="flex flex-col gap-1">
             <span class="h-1.5 w-full rounded-full bg-muted-foreground" />
-            <p class="font-semibold">13K EGP</p>
-            <span class="text-muted-foreground">20TH %</span>
+            <p class="font-semibold">{{ data.stats.p90Compensation }} EGP</p>
+            <span class="text-muted-foreground">90TH %</span>
           </li>
 
           <li class="flex flex-col gap-1">
             <span class="h-1.5 w-full rounded-full bg-muted" />
-            <p class="font-semibold">71</p>
+            <p class="font-semibold">{{ data.stats.totalCount }}</p>
             <span class="text-muted-foreground">Participants</span>
           </li>
         </ul>
@@ -71,28 +104,11 @@
       </div>
 
       <ContentChartBar
-        :labels="[
-          '3-6K',
-          '6-9K',
-          '9-12K',
-          '12-15K',
-          '15-20K',
-          '20-25K',
-          '25-30K',
-          '30-35K',
-          '45-40K',
-          '40-45K',
-          '45-50K',
-          '50-60K',
-          '60-70K',
-          '70-100K',
-          '100-120K',
-          '140-160K',
-        ]"
+        :labels="salaryRangeDistribution.labels"
         :series="[
           {
             name: 'Number of Participants',
-            data: [4, 17, 15, 15, 23, 12, 14, 13, 8, 8, 11, 8, 6, 6, 6, 1],
+            data: salaryRangeDistribution.count,
           },
         ]"
       />
