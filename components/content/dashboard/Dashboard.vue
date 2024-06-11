@@ -1,22 +1,5 @@
 <script setup lang="ts">
-  const filters = useState('dashboard-filters')
-
-  const filtersParams = computed(() => ({
-    title: filters.value.personal.titles,
-    salary: filters.value.personal.salary,
-    yoeFrom: filters.value.personal.yearsOfExperience.from,
-    yoeTo: filters.value.personal.yearsOfExperience.to,
-    level: filters.value.personal.level,
-    gender: filters.value.personal.gender,
-    programming_language: filters.value.personal.programmingLanguage,
-    cs_degree: filters.value.personal.csDegree,
-    business_line: filters.value.company.businessLine,
-    business_focus: filters.value.company.businessLine,
-    business_size: filters.value.company.businessLine,
-    business_market: filters.value.company.businessLine,
-    include_relocated: filters.value.participants.relocated,
-    include_remote_abroad: filters.value.participants.remoteAbroad,
-  }))
+  const { filtersParams } = useDashboard()
 
   const { data } = await useFetch('https://api.egytech.fyi/stats', {
     params: filtersParams,

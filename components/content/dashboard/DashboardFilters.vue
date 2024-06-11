@@ -1,25 +1,5 @@
 <script setup lang="ts">
-  const filters = useState('dashboard-filters', () => ({
-    personal: {
-      titles: [],
-      salary: '',
-      yearsOfExperience: { from: 0, to: 0 },
-      level: '',
-      gender: '',
-      programmingLanguage: '',
-      csDegree: '',
-    },
-    company: {
-      businessLine: '',
-      businessFocus: '',
-      businessSize: '',
-      businessMarket: '',
-    },
-    participants: {
-      relocated: false,
-      remoteAbroad: false,
-    },
-  }))
+  const { filters } = useDashboard()
 
   const titlesOptions = [
     { label: 'Frontend Engineer', value: '1' },
