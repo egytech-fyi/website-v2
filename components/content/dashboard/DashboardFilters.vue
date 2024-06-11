@@ -2,32 +2,32 @@
   const { filters } = useDashboard()
 
   const titlesOptions = [
-    { label: 'Frontend Engineer', value: '1' },
-    { label: 'Backend Engineer', value: '2' },
-    { label: 'Full-Stack Engineer', value: '3' },
+    { label: 'Frontend Engineer', value: 'frontend' },
+    { label: 'Backend Engineer', value: 'backend' },
+    { label: 'Full-Stack Engineer', value: 'fullstack' },
     {
       label: `Hardware Engineer (Semiconductors, Digital Design, Electronics, etc)`,
       value: 'hardware',
     },
-    { label: 'AI & Automation Engineer', value: '4' },
-    { label: 'Embedded Systems Engineer', value: '5' },
-    { label: 'Mobile Development Engineer', value: '6' },
-    { label: 'Security/Network Engineer', value: '7' },
-    { label: 'DevOps / SRE / Platform', value: '8' },
-    { label: 'QA / SDET Engineer', value: '9' },
-    { label: 'CRM Developer', value: '10' },
-    { label: 'Data Analytics', value: '11' },
-    { label: 'Data Engineer', value: '12' },
-    { label: 'Data Scientist', value: '13' },
-    { label: 'Engineering Manager', value: '14' },
-    { label: 'Executive (C-level, director, etc.)', value: '15' },
-    { label: 'UI/UX Designer/Engineer', value: '16' },
-    { label: 'Product Manager', value: '17' },
-    { label: 'Product Owner', value: '18' },
-    { label: 'Scrum Master', value: '19' },
-    { label: 'R&D Engineer (Computer Vision, NLP, etc.)', value: '20' },
-    { label: 'Systems Architect', value: '21' },
-    { label: 'Technical Support', value: '22' },
+    { label: 'AI & Automation Engineer', value: 'ai_automation' },
+    { label: 'Embedded Systems Engineer', value: 'embedded' },
+    { label: 'Mobile Development Engineer', value: 'mobile' },
+    { label: 'Security/Network Engineer', value: 'security' },
+    { label: 'DevOps / SRE / Platform', value: 'devops_sre_platform' },
+    { label: 'QA / SDET Engineer', value: 'testing' },
+    { label: 'CRM Developer', value: 'crm' },
+    { label: 'Data Analytics', value: 'data_analytics' },
+    { label: 'Data Engineer', value: 'data_engineer' },
+    { label: 'Data Scientist', value: 'data_scientist' },
+    { label: 'Engineering Manager', value: 'engineering_manager' },
+    { label: 'Executive (C-level, director, etc.)', value: 'executive' },
+    { label: 'UI/UX Designer/Engineer', value: 'ui_ux' },
+    { label: 'Product Manager', value: 'product_manager' },
+    { label: 'Product Owner', value: 'product_owner' },
+    { label: 'Scrum Master', value: 'scrum' },
+    { label: 'R&D Engineer (Computer Vision, NLP, etc.)', value: 'research' },
+    { label: 'Systems Architect', value: 'system_arch' },
+    { label: 'Technical Support', value: 'technical_support' },
   ]
 </script>
 
@@ -128,21 +128,25 @@
             </UiSelectTrigger>
 
             <UiSelectContent>
-              <UiSelectItem value="1">Intern</UiSelectItem>
-              <UiSelectItem value="2">Junior</UiSelectItem>
-              <UiSelectItem value="3">Mid Level</UiSelectItem>
-              <UiSelectItem value="4">Senior</UiSelectItem>
-              <UiSelectItem value="5">Staff</UiSelectItem>
-              <UiSelectItem value="6">Senior Staff</UiSelectItem>
-              <UiSelectItem value="7">Principal</UiSelectItem>
-              <UiSelectItem value="8">Senior Principal</UiSelectItem>
-              <UiSelectItem value="9">Team Lead</UiSelectItem>
-              <UiSelectItem value="10">Manager</UiSelectItem>
-              <UiSelectItem value="11">Senior Manager</UiSelectItem>
-              <UiSelectItem value="12">Director</UiSelectItem>
-              <UiSelectItem value="13">Group Product Manager</UiSelectItem>
-              <UiSelectItem value="14">VP</UiSelectItem>
-              <UiSelectItem value="15">C-Level</UiSelectItem>
+              <UiSelectItem value="intern">Intern</UiSelectItem>
+              <UiSelectItem value="junior">Junior</UiSelectItem>
+              <UiSelectItem value="mid_level">Mid Level</UiSelectItem>
+              <UiSelectItem value="senior">Senior</UiSelectItem>
+              <UiSelectItem value="staff">Staff</UiSelectItem>
+              <UiSelectItem value="senior_staff">Senior Staff</UiSelectItem>
+              <UiSelectItem value="principal">Principal</UiSelectItem>
+              <UiSelectItem value="senior_principal">
+                Senior Principal
+              </UiSelectItem>
+              <UiSelectItem value="team_lead">Team Lead</UiSelectItem>
+              <UiSelectItem value="manager">Manager</UiSelectItem>
+              <UiSelectItem value="senior_manager">Senior Manager</UiSelectItem>
+              <UiSelectItem value="director">Director</UiSelectItem>
+              <UiSelectItem value="group_product_manager">
+                Group Product Manager
+              </UiSelectItem>
+              <UiSelectItem value="vp">VP</UiSelectItem>
+              <UiSelectItem value="c-level">C-Level</UiSelectItem>
             </UiSelectContent>
           </UiSelect>
         </div>
@@ -157,8 +161,8 @@
             </UiSelectTrigger>
 
             <UiSelectContent>
-              <UiSelectItem value="1">Male</UiSelectItem>
-              <UiSelectItem value="2">Female</UiSelectItem>
+              <UiSelectItem value="male">Male</UiSelectItem>
+              <UiSelectItem value="female">Female</UiSelectItem>
             </UiSelectContent>
           </UiSelect>
         </div>
@@ -178,18 +182,20 @@
             </UiSelectTrigger>
 
             <UiSelectContent>
-              <UiSelectItem value="1">JavaScript</UiSelectItem>
-              <UiSelectItem value="2">TypeScript</UiSelectItem>
-              <UiSelectItem value="3">C#</UiSelectItem>
-              <UiSelectItem value="4">C/C++</UiSelectItem>
-              <UiSelectItem value="5">PHP</UiSelectItem>
-              <UiSelectItem value="6">Kotlin</UiSelectItem>
-              <UiSelectItem value="7">Swift</UiSelectItem>
-              <UiSelectItem value="8">Dart</UiSelectItem>
-              <UiSelectItem value="9">Go</UiSelectItem>
-              <UiSelectItem value="10">R</UiSelectItem>
-              <UiSelectItem value="11">Scala</UiSelectItem>
-              <UiSelectItem value="12">Rust</UiSelectItem>
+              <UiSelectItem value="java_script">JavaScript</UiSelectItem>
+              <UiSelectItem value="type_script">TypeScript</UiSelectItem>
+              <UiSelectItem value="python">Python</UiSelectItem>
+              <UiSelectItem value="java">Java</UiSelectItem>
+              <UiSelectItem value="c_sharp">C#</UiSelectItem>
+              <UiSelectItem value="c_cplusplus">C/C++</UiSelectItem>
+              <UiSelectItem value="php">PHP</UiSelectItem>
+              <UiSelectItem value="kotlin">Kotlin</UiSelectItem>
+              <UiSelectItem value="swift">Swift</UiSelectItem>
+              <UiSelectItem value="dart">Dart</UiSelectItem>
+              <UiSelectItem value="go">Go</UiSelectItem>
+              <UiSelectItem value="r">R</UiSelectItem>
+              <UiSelectItem value="scala">Scala</UiSelectItem>
+              <UiSelectItem value="rust">Rust</UiSelectItem>
             </UiSelectContent>
           </UiSelect>
         </div>
@@ -206,8 +212,8 @@
             </UiSelectTrigger>
 
             <UiSelectContent>
-              <UiSelectItem value="1">Yes</UiSelectItem>
-              <UiSelectItem value="2">No</UiSelectItem>
+              <UiSelectItem value="yes">Yes</UiSelectItem>
+              <UiSelectItem value="no">No</UiSelectItem>
             </UiSelectContent>
           </UiSelect>
         </div>
@@ -227,9 +233,9 @@
             </UiSelectTrigger>
 
             <UiSelectContent>
-              <UiSelectItem value="1">B2B</UiSelectItem>
-              <UiSelectItem value="2">B2C</UiSelectItem>
-              <UiSelectItem value="3">Both</UiSelectItem>
+              <UiSelectItem value="b2b">B2B</UiSelectItem>
+              <UiSelectItem value="b2c">B2C</UiSelectItem>
+              <UiSelectItem value="both">Both</UiSelectItem>
             </UiSelectContent>
           </UiSelect>
         </div>
@@ -249,8 +255,8 @@
             </UiSelectTrigger>
 
             <UiSelectContent>
-              <UiSelectItem value="1">Product Based</UiSelectItem>
-              <UiSelectItem value="2">Software House</UiSelectItem>
+              <UiSelectItem value="product">Product Based</UiSelectItem>
+              <UiSelectItem value="software_house">Software House</UiSelectItem>
             </UiSelectContent>
           </UiSelect>
         </div>
@@ -270,13 +276,13 @@
             </UiSelectTrigger>
 
             <UiSelectContent>
-              <UiSelectItem value="1">
+              <UiSelectItem value="large">
                 A Large Enterprise/Multinational Company
               </UiSelectItem>
-              <UiSelectItem value="2">
+              <UiSelectItem value="medium">
                 A Small and Medium Enterprise
               </UiSelectItem>
-              <UiSelectItem value="3">A Start-up</UiSelectItem>
+              <UiSelectItem value="small">A Start-up</UiSelectItem>
             </UiSelectContent>
           </UiSelect>
         </div>
@@ -296,9 +302,9 @@
             </UiSelectTrigger>
 
             <UiSelectContent>
-              <UiSelectItem value="1">Local</UiSelectItem>
-              <UiSelectItem value="2">Regional</UiSelectItem>
-              <UiSelectItem value="3">Global</UiSelectItem>
+              <UiSelectItem value="local">Local</UiSelectItem>
+              <UiSelectItem value="regional">Regional</UiSelectItem>
+              <UiSelectItem value="global">Global</UiSelectItem>
             </UiSelectContent>
           </UiSelect>
         </div>
