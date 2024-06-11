@@ -88,7 +88,6 @@
             <UiNumberField
               id="yoeFrom"
               v-model="filters.personal.yearsOfExperience.from"
-              :default-value="0"
               :min="0"
               :max="filters.personal.yearsOfExperience.to - 1"
             >
@@ -108,7 +107,6 @@
             <UiNumberField
               id="yoeTo"
               v-model="filters.personal.yearsOfExperience.to"
-              :default-value="filters.personal.yearsOfExperience.from + 1"
               :min="filters.personal.yearsOfExperience.from + 1"
             >
               <UiNumberFieldContent>
