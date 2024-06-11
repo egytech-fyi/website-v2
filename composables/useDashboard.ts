@@ -21,21 +21,17 @@ type DashboardFilters = {
 }
 
 type DashboardData = {
-  stats: Stats
-  buckets: Bucket[]
-}
-
-type Stats = {
-  totalCount: number
-  median: number
-  p20Compensation: number
-  p75Compensation: number
-  p90Compensation: number
-}
-
-type Bucket = {
-  bucket: string
-  count: number
+  stats: {
+    totalCount: number
+    median: number
+    p20Compensation: number
+    p75Compensation: number
+    p90Compensation: number
+  }
+  buckets: Array<{
+    bucket: string
+    count: number
+  }>
 }
 
 export default function () {
