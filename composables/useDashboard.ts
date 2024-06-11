@@ -39,7 +39,7 @@ export default function () {
     personal: {
       titles: [],
       salary: '',
-      yearsOfExperience: { from: 0, to: 0 },
+      yearsOfExperience: { from: 0, to: 30 },
       level: '',
       gender: '',
       programmingLanguage: '',
@@ -73,7 +73,41 @@ export default function () {
     include_remote_abroad: filters.value.participants.remoteAbroad,
   }))
 
-  function getDashboardData() {
+  function getDashboardData(baseUrl: string) {
+    return useAsyncData(
+      'dashboard-data',
+      async () => {
+        const [all, males, females] = await Promise.all([
+          $fetch<DashboardData>(baseUrl, { params: filtersParams.value }),
+          $fetch<DashboardData>(baseUrl, {
+            params: { ...filtersParams.value, gender: 'male' },
+          }),
+          $fetch<DashboardData>(baseUrl, {
+            params: { ...filtersParams.value, gender: 'female' },
+          }),
+        ])
+
+        const allGenders = {
+          salaryRanges: all.buckets.map((bucket) => bucket.bucket),
+          participantsCount: all.buckets.map((bucket) => bucket.count),
+        }
+
+        return {
+          stats: all.stats,
+          allGenders,
+          salaryGenderComparison: {
+            males: getGenderPercentagesArray(males, all),
+            females: getGenderPercentagesArray(females, all),
+          },
+        }
+      },
+      {
+        watch: [filtersParams],
+      },
+    )
+  }
+
+  function getDashboardDataOld() {
     return useFetch<DashboardData>('https://api.egytech.fyi/stats', {
       params: filtersParams,
       transform: (data) => ({
@@ -86,5 +120,31 @@ export default function () {
     })
   }
 
-  return { filters, filtersParams, getDashboardData }
+  return {
+    filters,
+    filtersParams,
+    getDashboardData,
+    getDashboardDataOld,
+  }
+}
+
+/**
+ * Compares a specific gender (Male/Female) data with combined genders data to get the percentage of each salary range & fills the missing salary ranges with 0
+ *
+ */
+function getGenderPercentagesArray(
+  genderData: DashboardData,
+  allData: DashboardData,
+) {
+  const baseGenderPercentages = allData.buckets.map(({ bucket, count }) => {
+    const isGenderBucketFound = genderData.buckets.some(
+      (genderBucket) => genderBucket.bucket === bucket,
+    )
+
+    return isGenderBucketFound
+      ? +((count / allData.stats.totalCount) * 100).toPrecision(3)
+      : 0
+  })
+
+  return baseGenderPercentages
 }

@@ -1,6 +1,7 @@
 <script setup lang="ts">
   const { getDashboardData } = useDashboard()
-  const { data } = await getDashboardData()
+  const baseUrl = 'https://api.egytech.fyi/stats'
+  const { data } = getDashboardData(baseUrl)
 </script>
 
 <template>
@@ -64,7 +65,7 @@
       </div>
     </div>
 
-    <!-- Salary Range Distribution  -->
+    <!-- Salary Range Distribution -->
     <div class="space-y-4">
       <div>
         <ProseH3>Salary Range Distribution Among Participants</ProseH3>
@@ -74,11 +75,11 @@
       </div>
 
       <ContentChartBar
-        :labels="data.salaryRangeDistribution.labels"
+        :labels="data.allGenders.salaryRanges"
         :series="[
           {
             name: 'Number of Participants',
-            data: data.salaryRangeDistribution.count,
+            data: data.allGenders.participantsCount,
           },
         ]"
       />
@@ -107,38 +108,10 @@
 
       <ContentChartLine
         :y-axis-percentage="true"
-        :labels="[
-          '3-6K',
-          '6-9K',
-          '9-12K',
-          '12-15K',
-          '15-20K',
-          '20-25K',
-          '25-30K',
-          '30-35K',
-          '45-40K',
-          '40-45K',
-          '45-50K',
-          '50-60K',
-          '60-70K',
-          '70-100K',
-          '140-160K',
-        ]"
+        :labels="data.allGenders.salaryRanges"
         :series="[
-          {
-            name: 'Male',
-            data: [
-              2.48, 9.92, 1.8, 12.2, 2.48, 9.92, 1.8, 12.2, 2.48, 9.92, 1.8,
-              12.2, 2.48, 9.92, 1.8,
-            ],
-          },
-          {
-            name: 'Female',
-            data: [
-              27.4, 52.2, 1.4, 18.7, 27.4, 52.2, 1.4, 18.7, 27.4, 52.2, 1.4,
-              18.7, 27.4, 52.2, 1.4,
-            ],
-          },
+          { name: 'Male', data: data.salaryGenderComparison.males },
+          { name: 'Female', data: data.salaryGenderComparison.females },
         ]"
         :options="{
           xaxis: {
