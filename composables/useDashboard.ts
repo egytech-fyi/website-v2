@@ -59,7 +59,6 @@ export default function () {
 
   const filtersParams = computed(() => ({
     title: filters.value.personal.titles,
-    salary: filters.value.personal.salary,
     yoe_from_included: filters.value.personal.yearsOfExperience.from,
     yoe_to_excluded: filters.value.personal.yearsOfExperience.to,
     level: filters.value.personal.level,
