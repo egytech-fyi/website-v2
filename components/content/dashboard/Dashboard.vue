@@ -1,23 +1,18 @@
 <script setup lang="ts">
-  const { filtersParams } = useDashboard()
-
-  const { data } = await useFetch('https://api.egytech.fyi/stats', {
-    params: filtersParams,
-  })
+  const { getDashboardData } = useDashboard()
+  const { data } = await getDashboardData()
 
   const salaryRangeDistribution = computed(() => {
+    if (!data.value) return { labels: [], count: [] }
+
     const labels = data.value.buckets.map((bucket) => bucket.bucket)
     const count = data.value.buckets.map((bucket) => bucket.count)
-
-    return {
-      labels,
-      count,
-    }
+    return { labels, count }
   })
 </script>
 
 <template>
-  <div class="space-y-16">
+  <div v-if="data" class="space-y-16">
     <!-- Salaries Percentile -->
     <div class="space-y-4">
       <ProseH3>Salaries Percentile</ProseH3>
