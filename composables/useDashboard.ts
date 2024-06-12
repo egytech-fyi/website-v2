@@ -107,24 +107,10 @@ export default function () {
     )
   }
 
-  function getDashboardDataOld() {
-    return useFetch<DashboardData>('https://api.egytech.fyi/stats', {
-      params: filtersParams,
-      transform: (data) => ({
-        ...data,
-        salaryRangeDistribution: {
-          labels: data.buckets.map((bucket) => bucket.bucket),
-          count: data.buckets.map((bucket) => bucket.count),
-        },
-      }),
-    })
-  }
-
   return {
     filters,
     filtersParams,
     getDashboardData,
-    getDashboardDataOld,
   }
 }
 
