@@ -129,7 +129,11 @@ export default function () {
     }
 
     // Updating filters state with parsed filters and defaulting to initial state
-    filters.value = defu(parsedFilters, filters.value)
+    // `defu` concat arrays by default, so we pass an empty array as a default
+    filters.value = defu(parsedFilters, {
+      ...filters.value,
+      personal: { titles: [] },
+    })
   }
 
   function storeFiltersToUrlWatcher() {
