@@ -64,9 +64,9 @@ export default function () {
     programming_language: filters.value.personal.programmingLanguage,
     cs_degree: filters.value.personal.csDegree,
     business_line: filters.value.company.businessLine,
-    business_focus: filters.value.company.businessLine,
-    business_size: filters.value.company.businessLine,
-    business_market: filters.value.company.businessLine,
+    business_focus: filters.value.company.businessFocus,
+    business_size: filters.value.company.businessSize,
+    business_market: filters.value.company.businessMarket,
     include_relocated: filters.value.participants.relocated,
     include_remote_abroad: filters.value.participants.remoteAbroad,
   }))
