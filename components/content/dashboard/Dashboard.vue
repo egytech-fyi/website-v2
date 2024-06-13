@@ -59,7 +59,7 @@
             variant="outline"
           >
             <Icon name="ph:pencil-simple-duotone" class="size-5" />
-            Share your salary
+            Participate in Survey
           </UiLink>
         </div>
       </div>
