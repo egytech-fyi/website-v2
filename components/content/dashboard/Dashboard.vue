@@ -6,6 +6,20 @@
   const { getDashboardData } = useDashboard()
   const baseUrl = 'https://api.egytech.fyi/stats'
   const { data, error } = getDashboardData(baseUrl)
+
+  // Copying url to clipboard
+  const isCopied = ref(false)
+  function copyUrlToClipboard() {
+    isCopied.value = true
+    navigator.clipboard.writeText(window.location.href)
+  }
+  watchEffect(() => {
+    if (isCopied.value) {
+      setTimeout(() => {
+        isCopied.value = false
+      }, 1500)
+    }
+  })
 </script>
 
 <template>
@@ -27,6 +41,26 @@
   </div>
 
   <div v-else-if="data" class="space-y-16">
+    <!-- Share results -->
+    <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+      <p class="text-start">
+        You can share the results of the selected filters to others! We exclude
+        your salary for privacy.
+      </p>
+
+      <UiButton
+        class="h-9 min-w-48 gap-2"
+        variant="outline"
+        @click="copyUrlToClipboard"
+      >
+        <Icon
+          :name="isCopied ? 'ph:check-fat-duotone' : 'ph:clipboard-duotone'"
+          class="size-5"
+        />
+        {{ isCopied ? 'Copied!' : 'Copy to Clipboard' }}
+      </UiButton>
+    </div>
+
     <!-- Salaries Percentile -->
     <div class="space-y-4">
       <ProseH3>Salaries Percentile</ProseH3>
