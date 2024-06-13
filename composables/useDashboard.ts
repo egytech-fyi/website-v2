@@ -38,27 +38,9 @@ type DashboardData = {
 }
 
 export default function () {
-  const filters = useState<DashboardFilters>('dashboard-filters', () => ({
-    personal: {
-      titles: [],
-      salary: '',
-      yearsOfExperience: { from: 0, to: 30 },
-      level: '',
-      gender: '',
-      programmingLanguage: '',
-      csDegree: '',
-    },
-    company: {
-      businessLine: '',
-      businessFocus: '',
-      businessSize: '',
-      businessMarket: '',
-    },
-    participants: {
-      relocated: false,
-      remoteAbroad: false,
-    },
-  }))
+  const filters = useState<DashboardFilters>('dashboard-filters', () =>
+    getInitialFilters(),
+  )
 
   const filtersParams = computed(() => ({
     title: filters.value.personal.titles,
@@ -75,6 +57,30 @@ export default function () {
     include_relocated: filters.value.participants.relocated,
     include_remote_abroad: filters.value.participants.remoteAbroad,
   }))
+
+  function getInitialFilters() {
+    return {
+      personal: {
+        titles: [],
+        salary: '',
+        yearsOfExperience: { from: 0, to: 30 },
+        level: '',
+        gender: '',
+        programmingLanguage: '',
+        csDegree: '',
+      },
+      company: {
+        businessLine: '',
+        businessFocus: '',
+        businessSize: '',
+        businessMarket: '',
+      },
+      participants: {
+        relocated: false,
+        remoteAbroad: false,
+      },
+    }
+  }
 
   function readFiltersFromUrl(url: URL) {
     // Parsing filters params from URL
@@ -162,9 +168,10 @@ export default function () {
   return {
     filters,
     filtersParams,
-    getDashboardData,
+    getInitialFilters,
     readFiltersFromUrl,
     storeFiltersToUrlWatcher,
+    getDashboardData,
   }
 }
 

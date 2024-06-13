@@ -17,6 +17,13 @@
     unwatchFiltersParams() // Stop watching filters
   })
 
+  // Resetting filters
+  const { getInitialFilters } = useDashboard()
+  function resetFilters() {
+    filters.value = getInitialFilters()
+  }
+
+  // Titles options to be passed to TagsCombobox component
   const titlesOptions = [
     { label: 'Frontend Engineer', value: 'frontend' },
     { label: 'Backend Engineer', value: 'backend' },
@@ -53,7 +60,12 @@
       <p class="text-base font-semibold">Filters</p>
 
       <div class="flex items-center gap-2">
-        <UiButton class="h-9 gap-2" variant="outline" size="xs">
+        <UiButton
+          class="h-9 gap-2"
+          variant="outline"
+          size="xs"
+          @click="resetFilters"
+        >
           <Icon name="ph:arrow-clockwise-duotone" class="size-5" />
           <span>Reset</span>
         </UiButton>
