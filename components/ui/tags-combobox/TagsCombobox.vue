@@ -13,16 +13,14 @@
   }
   const { options, placeholder = '' } = defineProps<UiTagsComboboxProps>()
 
-  // selectedOptionsValues is the model value consumed in parent by v-model directive
-  const selectedOptionsValues = defineModel<string[]>({ default: () => [] })
-  // selectedOptionsLabels is value we internally use to show labels in tags input and sync it with selectedOptionsValues
-  const selectedOptionsLabels = ref<string[]>([])
+  // selectedOptions model value (consumed in parent by v-model directive)
+  const selectedOptions = defineModel<string[]>({ default: () => [] })
 
   // Combobox state
   const isComboboxOpen = ref(false)
   const searchTerm = ref('')
   const filteredOptions = computed(() =>
-    options.filter((i) => !selectedOptionsLabels.value.includes(i.label)),
+    options.filter((i) => !selectedOptions.value.includes(i.label)),
   )
 
   // Updating selected options
@@ -32,10 +30,9 @@
     value?: T
   }>
   function handleOptionSelect(ev: SelectEvent<AcceptableValue>) {
-    const selectedOptionLabel = ev.detail.value
-    if (typeof selectedOptionLabel === 'string') {
+    if (typeof ev.detail.value === 'string') {
       searchTerm.value = ''
-      selectedOptionsLabels.value.push(selectedOptionLabel)
+      selectedOptions.value.push(ev.detail.value)
     }
 
     if (filteredOptions.value.length === 0) {
@@ -43,24 +40,21 @@
     }
   }
 
-  // Syncing `selectedOptionsValues` with `selectedOptionsLabels`
-  watch(
-    selectedOptionsLabels,
-    (newVal) => {
-      selectedOptionsValues.value = newVal.map((label) => {
-        const option = options.find((o) => o.label === label)
-        return option?.value ?? ''
-      })
-    },
-    { deep: true },
-  )
+  function getOptionLabel(value: AcceptableValue) {
+    const selectedOption = options.find((o) => o.value === value)
+    return selectedOption?.label || ''
+  }
 </script>
 
 <template>
-  <UiTagsInput class="w-full gap-0 px-0" :model-value="selectedOptionsLabels">
+  <UiTagsInput
+    class="w-full gap-0 px-0"
+    :model-value="selectedOptions"
+    :display-value="getOptionLabel"
+  >
     <div class="flex flex-wrap items-center gap-2 px-3">
       <UiTagsInputItem
-        v-for="item in selectedOptionsLabels"
+        v-for="item in selectedOptions"
         :key="item"
         :value="item"
         class="h-auto"
@@ -71,7 +65,7 @@
     </div>
 
     <ComboboxRoot
-      v-model="selectedOptionsLabels"
+      v-model="selectedOptions"
       v-model:open="isComboboxOpen"
       v-model:searchTerm="searchTerm"
       class="w-full"
@@ -80,7 +74,7 @@
         <ComboboxInput :placeholder as-child>
           <UiTagsInputInput
             class="w-full px-3"
-            :class="selectedOptionsLabels.length > 0 ? 'mt-2' : ''"
+            :class="selectedOptions.length > 0 ? 'mt-2' : ''"
           />
 
           <ComboboxTrigger>
@@ -99,7 +93,7 @@
             <UiCommandItem
               v-for="option in filteredOptions"
               :key="option.value"
-              :value="option.label"
+              :value="option.value"
               @select.prevent="handleOptionSelect"
             >
               {{ option.label }}
