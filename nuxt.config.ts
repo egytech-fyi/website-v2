@@ -57,6 +57,9 @@ export default defineNuxtConfig({
   // Generate only Nuxt-specific rules as we're using `antfu/eslint-config` for other Vue & TS rules
   eslint: { config: { standalone: false } },
 
+  // Enable reactive props destructuring
+  vue: { propsDestructure: true },
+
   // https://github.com/nuxt/nuxt/pull/22558
   hooks: {
     'components:extend': (components) => {
