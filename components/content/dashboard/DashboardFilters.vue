@@ -293,11 +293,9 @@
 
             <UiSelectContent>
               <UiSelectItem value="large">
-                A Large Enterprise/Multinational Company
+                Large/Multinational Enterprise
               </UiSelectItem>
-              <UiSelectItem value="medium">
-                A Small and Medium Enterprise
-              </UiSelectItem>
+              <UiSelectItem value="medium">Small/Medium Company</UiSelectItem>
               <UiSelectItem value="small">A Start-up</UiSelectItem>
             </UiSelectContent>
           </UiSelect>
