@@ -1,3 +1,5 @@
+import { stringifyQuery } from 'ufo'
+
 type DashboardFilters = {
   personal: {
     titles: string[]
@@ -73,6 +75,13 @@ export default function () {
     include_remote_abroad: filters.value.participants.remoteAbroad,
   }))
 
+  function storeFiltersToUrlWatcher() {
+    return watchEffect(() => {
+      const newURLQueries = stringifyQuery(filtersParams.value)
+      window.history.replaceState(window.history.state, '', `?${newURLQueries}`)
+    })
+  }
+
   function getDashboardData(baseUrl: string) {
     return useAsyncData(
       'dashboard-data',
@@ -111,6 +120,7 @@ export default function () {
     filters,
     filtersParams,
     getDashboardData,
+    storeFiltersToUrlWatcher,
   }
 }
 
