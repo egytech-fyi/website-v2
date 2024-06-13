@@ -23,6 +23,7 @@
 </script>
 
 <template>
+  <!-- Empty Filters -->
   <div
     v-if="!filters.personal.titles?.length"
     class="space-y-8 py-20 text-center md:py-40"
@@ -31,6 +32,7 @@
     <p>Select at least one title to get started.</p>
   </div>
 
+  <!-- Error -->
   <div v-else-if="error" class="space-y-8 py-20 text-center md:py-40">
     <div class="!text-6xl text-red-600 dark:text-red-800">
       <Icon name="ph:link-break-duotone" class="size-20" />
@@ -40,7 +42,25 @@
     <p>Something went wrong. Please try again later.</p>
   </div>
 
-  <div v-else-if="data" class="space-y-16">
+  <!-- Empty Results -->
+  <div
+    v-if="data?.stats.totalCount === 0"
+    class="space-y-4 py-20 text-center md:py-40"
+  >
+    <Icon name="ph:chart-line-down-duotone" class="size-20" />
+
+    <p>
+      We have no results for the selected filters. You can be the first one!
+    </p>
+
+    <UiLink to="/community/participate" class="h-9 gap-2" variant="outline">
+      <Icon name="ph:pencil-simple-duotone" class="size-5" />
+      Participate in Survey
+    </UiLink>
+  </div>
+
+  <!-- Results -->
+  <div v-else-if="data" class="space-y-16 pt-8">
     <!-- Share results -->
     <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
       <p class="text-start">
