@@ -1,5 +1,6 @@
 import { parseQuery, stringifyQuery } from 'ufo'
 import { defu } from 'defu'
+import { hash } from 'ohash'
 
 type DashboardFilters = {
   personal: {
@@ -23,7 +24,7 @@ type DashboardFilters = {
   }
 }
 
-type DashboardData = {
+type DashboardAPIResponse = {
   stats: {
     totalCount: number
     median: number
@@ -35,6 +36,18 @@ type DashboardData = {
     bucket: string
     count: number
   }>
+}
+
+type DashboardData = {
+  stats: DashboardAPIResponse['stats']
+  allGenders: {
+    salaryRanges: any
+    participantsCount: any
+  }
+  salaryGenderComparison: {
+    males: number[]
+    females: number[]
+  }
 }
 
 export default function () {
@@ -131,33 +144,50 @@ export default function () {
     })
   }
 
+  const cachedDashboardData = useState<Record<string, DashboardData>>(
+    'cached-dashboard-data',
+    () => ({}),
+  )
   function getDashboardData(baseUrl: string) {
     return useAsyncData(
       'dashboard-data',
       async () => {
+        // Hashing the request params & using it as a key to cache & restore responses
+        const cleanFiltersParams = removeObjectEmptyValues(filtersParams.value)
+        const hashedRequest = hash(stringifyQuery(cleanFiltersParams))
+
+        // Returning cached data if exists
+        if (cachedDashboardData.value[hashedRequest])
+          return cachedDashboardData.value[hashedRequest]
+
+        // Fetching data from API
         const [all, males, females] = await Promise.all([
-          $fetch<DashboardData>(baseUrl, { params: filtersParams.value }),
-          $fetch<DashboardData>(baseUrl, {
+          $fetch<DashboardAPIResponse>(baseUrl, {
+            params: filtersParams.value,
+          }),
+          $fetch<DashboardAPIResponse>(baseUrl, {
             params: { ...filtersParams.value, gender: 'male' },
           }),
-          $fetch<DashboardData>(baseUrl, {
+          $fetch<DashboardAPIResponse>(baseUrl, {
             params: { ...filtersParams.value, gender: 'female' },
           }),
         ])
 
-        const allGenders = {
-          salaryRanges: all.buckets.map((bucket) => bucket.bucket),
-          participantsCount: all.buckets.map((bucket) => bucket.count),
-        }
-
-        return {
+        const result = {
           stats: all.stats,
-          allGenders,
+          allGenders: {
+            salaryRanges: all.buckets.map((bucket) => bucket.bucket),
+            participantsCount: all.buckets.map((bucket) => bucket.count),
+          },
           salaryGenderComparison: {
             males: getGenderPercentagesArray(males, all),
             females: getGenderPercentagesArray(females, all),
           },
         }
+
+        // Caching the response & returning it
+        cachedDashboardData.value[hashedRequest] = result
+        return result
       },
       {
         watch: [filtersParams],
@@ -180,8 +210,8 @@ export default function () {
  *
  */
 function getGenderPercentagesArray(
-  genderData: DashboardData,
-  allData: DashboardData,
+  genderData: DashboardAPIResponse,
+  allData: DashboardAPIResponse,
 ) {
   const baseGenderPercentages = allData.buckets.map(({ bucket }) => {
     const genderBucket = genderData.buckets.find(
