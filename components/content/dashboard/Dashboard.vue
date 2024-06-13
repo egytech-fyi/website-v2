@@ -1,16 +1,29 @@
 <script setup lang="ts">
+  // Validating if a user selected at least one position
+  const { filters } = useDashboard()
+
+  // Getting data from the API
   const { getDashboardData } = useDashboard()
   const baseUrl = 'https://api.egytech.fyi/stats'
   const { data, error } = getDashboardData(baseUrl)
 </script>
 
 <template>
-  <div v-if="error" class="space-y-8 py-20 text-center md:py-60">
-    <ProseH1 class="!text-6xl text-red-600 dark:text-red-800">Oops!</ProseH1>
+  <div
+    v-if="!filters.personal.titles?.length"
+    class="space-y-8 py-20 text-center md:py-40"
+  >
+    <Icon name="ph:shooting-star-duotone" class="size-20" />
+    <p>Select at least one title to get started.</p>
+  </div>
 
-    <p>
-      {{ 'Something went wrong. Please try again later.' }}
-    </p>
+  <div v-else-if="error" class="space-y-8 py-20 text-center md:py-40">
+    <div class="!text-6xl text-red-600 dark:text-red-800">
+      <Icon name="ph:link-break-duotone" class="size-20" />
+      <ProseH1>Oops!</ProseH1>
+    </div>
+
+    <p>Something went wrong. Please try again later.</p>
   </div>
 
   <div v-else-if="data" class="space-y-16">
