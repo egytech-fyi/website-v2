@@ -32,7 +32,7 @@
   function handleOptionSelect(ev: SelectEvent<AcceptableValue>) {
     if (typeof ev.detail.value === 'string') {
       searchTerm.value = ''
-      selectedOptions.value.push(ev.detail.value)
+      selectedOptions.value = [...selectedOptions.value, ev.detail.value]
     }
 
     if (filteredOptions.value.length === 0) {
