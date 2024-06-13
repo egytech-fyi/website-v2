@@ -115,8 +115,13 @@ export default function () {
 
   function storeFiltersToUrlWatcher() {
     return watchEffect(() => {
-      const newURLQueries = stringifyQuery(filtersParams.value)
-      window.history.replaceState(window.history.state, '', `?${newURLQueries}`)
+      const cleanFiltersParams = removeObjectEmptyValues(filtersParams.value)
+      const newURLQueries = stringifyQuery(cleanFiltersParams)
+      window.history.replaceState(
+        window.history.state,
+        '',
+        newURLQueries ? `?${newURLQueries}` : '',
+      )
     })
   }
 
@@ -195,4 +200,14 @@ function normalizeUrlParam(
 
   if (target === 'array') return Array.isArray(param) ? param : [param]
   else return Array.isArray(param) ? param[0] : param
+}
+
+function removeObjectEmptyValues(source: Record<string, any>) {
+  return Object.entries(source).reduce(
+    (acc, [key, value]) => {
+      if (value) acc[key] = value
+      return acc
+    },
+    {} as Record<string, any>,
+  )
 }
