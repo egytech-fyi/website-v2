@@ -152,6 +152,10 @@ export default function () {
     return useAsyncData(
       'dashboard-data',
       async () => {
+        // Early return if no title selected to save API calls
+        if (filtersParams.value.title.length === 0)
+          throw new Error('No title selected')
+
         // Hashing the request params & using it as a key to cache & restore responses
         const cleanFiltersParams = removeObjectEmptyValues(filtersParams.value)
         const hashedRequest = hash(stringifyQuery(cleanFiltersParams))
