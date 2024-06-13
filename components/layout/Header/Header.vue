@@ -10,7 +10,7 @@
     <div
       class="container flex h-14 max-w-screen-2xl items-center justify-between gap-2 border-b px-4 md:px-8 lg:border-none"
     >
-      <LayoutHeaderLogo class="flex" />
+      <LayoutHeaderLogo class="flex" hide-title-in-small-screen />
       <LayoutHeaderNav class="hidden flex-1 lg:flex" />
       <div class="flex flex-1 justify-end gap-2">
         <LayoutSearchButton v-if="!config.search?.inAside" />
