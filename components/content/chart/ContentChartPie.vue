@@ -11,9 +11,11 @@
     options?: ApexOptions
   }>()
 
+  const slicesLabels = computed(() => labels)
+
   // @ts-expect-error todo: fix types
   const mergedOptions = computed<ApexOptions>(() =>
-    defu(options, { chart: { type: 'pie' }, labels }),
+    defu(options, { chart: { type: 'pie' }, labels: slicesLabels.value }),
   )
 </script>
 

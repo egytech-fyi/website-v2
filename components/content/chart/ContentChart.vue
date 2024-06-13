@@ -140,7 +140,11 @@
     },
   }))
 
-  const mergedOptions = computed(() => defu(options, defaultOptions.value))
+  const customOptions = computed(() => options)
+
+  const mergedOptions = computed(() =>
+    defu(customOptions.value, defaultOptions.value),
+  )
 </script>
 
 <template>

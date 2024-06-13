@@ -21,13 +21,14 @@
     options?: ApexOptions
   }>()
 
+  const xAxisLabels = computed(() => labels)
   const mappedBarSeries = computed(() => {
     return barSeries.map((series) => ({ type: 'bar', ...series }))
   })
 
   const mergedOptions = computed<ApexOptions>(() =>
     defu(options, {
-      xaxis: { categories: labels },
+      xaxis: { categories: xAxisLabels.value },
       yaxis: [
         {
           title: { text: barTitle ?? barSeries[0].name, offsetX: -8 },

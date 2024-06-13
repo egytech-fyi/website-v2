@@ -13,11 +13,13 @@
     options?: ApexOptions
   }>()
 
+  const xAxisLabels = computed(() => labels)
+
   // @ts-expect-error todo: fix types
   const mergedOptions = computed<ApexOptions>(() =>
     defu(options, {
       chart: { type: 'bar' },
-      xaxis: { categories: labels },
+      xaxis: { categories: xAxisLabels.value },
       ...(horizontal && { plotOptions: { bar: { horizontal: true } } }),
     }),
   )
