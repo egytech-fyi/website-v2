@@ -1,5 +1,22 @@
 <script setup lang="ts">
+  import { stringifyQuery } from 'ufo'
+  import type { WatchStopHandle } from 'vue'
+
   const { filters } = useDashboard()
+
+  // Syncing filters with URL queries for users to share customized links easily
+  let unwatchFiltersParams: WatchStopHandle
+  const { filtersParams } = useDashboard()
+  onMounted(() => {
+    unwatchFiltersParams = watchEffect(() => {
+      const newURLQueries = stringifyQuery(filtersParams.value)
+      window.history.replaceState(window.history.state, '', `?${newURLQueries}`)
+    })
+  })
+  onUnmounted(() => {
+    window.history.replaceState(window.history.state, '', window.location.href) // Remove url queries
+    unwatchFiltersParams() // Stop watching filters
+  })
 
   const titlesOptions = [
     { label: 'Frontend Engineer', value: 'frontend' },

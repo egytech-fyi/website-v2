@@ -1,25 +1,7 @@
 <script setup lang="ts">
-  import { stringifyQuery } from 'ufo'
-  import type { WatchStopHandle } from 'vue'
-
-  // Fetching data from API
   const { getDashboardData } = useDashboard()
   const baseUrl = 'https://api.egytech.fyi/stats'
   const { data } = getDashboardData(baseUrl)
-
-  // Storing filters as URL queries for users to share customized links easily
-  let unwatchFiltersParams: WatchStopHandle
-  const { filtersParams } = useDashboard()
-  onMounted(() => {
-    unwatchFiltersParams = watchEffect(() => {
-      const newURLQueries = stringifyQuery(filtersParams.value)
-      window.history.replaceState(window.history.state, '', `?${newURLQueries}`)
-    })
-  })
-  onUnmounted(() => {
-    window.history.replaceState(window.history.state, '', window.location.href) // Remove url queries
-    unwatchFiltersParams() // Stop watching filters
-  })
 </script>
 
 <template>
