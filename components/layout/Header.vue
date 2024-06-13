@@ -10,8 +10,7 @@
     <div
       class="container flex h-14 max-w-screen-2xl items-center justify-between gap-2 border-b px-4 md:px-8 lg:border-none"
     >
-      <LayoutHeaderLogo class="hidden flex-1 md:flex" />
-      <LayoutMobileNav />
+      <LayoutHeaderLogo class="flex" />
       <LayoutHeaderNav class="hidden flex-1 lg:flex" />
       <div class="flex flex-1 justify-end gap-2">
         <LayoutSearchButton v-if="!config.search?.inAside" />
@@ -29,6 +28,7 @@
           </NuxtLink>
         </div>
       </div>
+      <LayoutMobileNav />
     </div>
     <div v-if="config.toc.enable" class="lg:hidden">
       <LayoutDashboardFilters v-if="page.dashboard?.enable" :is-small="true" />
