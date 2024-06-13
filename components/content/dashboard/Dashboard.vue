@@ -5,7 +5,7 @@
   // Getting data from the API
   const { getDashboardData } = useDashboard()
   const baseUrl = 'https://api.egytech.fyi/stats'
-  const { data, error } = getDashboardData(baseUrl)
+  const { data, error, status } = getDashboardData(baseUrl)
 
   // Copying url to clipboard
   const isCopied = ref(false)
@@ -32,6 +32,15 @@
     <p>Select at least one title to get started.</p>
   </div>
 
+  <!-- Loading -->
+  <div
+    v-else-if="status === 'pending'"
+    class="space-y-8 py-20 text-center md:py-40"
+  >
+    <Icon name="Loading" class="size-20" />
+    <p>Fetching data from the backend...</p>
+  </div>
+
   <!-- Error -->
   <div v-else-if="error" class="space-y-8 py-20 text-center md:py-40">
     <div class="!text-6xl text-red-600 dark:text-red-800">
@@ -44,7 +53,7 @@
 
   <!-- Empty Results -->
   <div
-    v-if="data?.stats.totalCount === 0"
+    v-else-if="data?.stats.totalCount === 0"
     class="space-y-4 py-20 text-center md:py-40"
   >
     <Icon name="ph:chart-line-down-duotone" class="size-20" />
