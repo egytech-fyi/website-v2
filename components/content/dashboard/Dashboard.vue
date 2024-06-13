@@ -1,11 +1,19 @@
 <script setup lang="ts">
   const { getDashboardData } = useDashboard()
   const baseUrl = 'https://api.egytech.fyi/stats'
-  const { data } = getDashboardData(baseUrl)
+  const { data, error } = getDashboardData(baseUrl)
 </script>
 
 <template>
-  <div v-if="data" class="space-y-16">
+  <div v-if="error" class="space-y-8 py-20 text-center md:py-60">
+    <ProseH1 class="!text-6xl text-red-600 dark:text-red-800">Oops!</ProseH1>
+
+    <p>
+      {{ 'Something went wrong. Please try again later.' }}
+    </p>
+  </div>
+
+  <div v-else-if="data" class="space-y-16">
     <!-- Salaries Percentile -->
     <div class="space-y-4">
       <ProseH3>Salaries Percentile</ProseH3>
