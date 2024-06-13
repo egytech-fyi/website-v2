@@ -1,4 +1,5 @@
-import { stringifyQuery } from 'ufo'
+import { parseQuery, stringifyQuery } from 'ufo'
+import { defu } from 'defu'
 
 type DashboardFilters = {
   personal: {
@@ -75,6 +76,43 @@ export default function () {
     include_remote_abroad: filters.value.participants.remoteAbroad,
   }))
 
+  function readFiltersFromUrl(url: URL) {
+    // Parsing filters params from URL
+    const urlFiltersParams = url.searchParams.toString()
+    const parsedFiltersParams = parseQuery(urlFiltersParams)
+
+    // Mapping parsed filters to match `DashboardFilters` type
+    const parsedFilters = {
+      personal: {
+        titles: normalizeUrlParam(parsedFiltersParams.title, 'array'),
+        salary: '',
+        yearsOfExperience: {
+          from: +normalizeUrlParam(parsedFiltersParams.yoe_from_included),
+          to: +normalizeUrlParam(parsedFiltersParams.yoe_to_excluded),
+        },
+        level: normalizeUrlParam(parsedFiltersParams.level),
+        gender: normalizeUrlParam(parsedFiltersParams.gender),
+        programmingLanguage: normalizeUrlParam(
+          parsedFiltersParams.programming_language,
+        ),
+        csDegree: normalizeUrlParam(parsedFiltersParams.cs_degree),
+      },
+      company: {
+        businessLine: normalizeUrlParam(parsedFiltersParams.business_line),
+        businessFocus: normalizeUrlParam(parsedFiltersParams.business_focus),
+        businessSize: normalizeUrlParam(parsedFiltersParams.business_size),
+        businessMarket: normalizeUrlParam(parsedFiltersParams.business_market),
+      },
+      participants: {
+        relocated: parsedFiltersParams.include_relocated === 'true',
+        remoteAbroad: parsedFiltersParams.include_remote_abroad === 'true',
+      },
+    }
+
+    // Updating filters state with parsed filters and defaulting to initial state
+    filters.value = defu(parsedFilters, filters.value)
+  }
+
   function storeFiltersToUrlWatcher() {
     return watchEffect(() => {
       const newURLQueries = stringifyQuery(filtersParams.value)
@@ -120,6 +158,7 @@ export default function () {
     filters,
     filtersParams,
     getDashboardData,
+    readFiltersFromUrl,
     storeFiltersToUrlWatcher,
   }
 }
@@ -143,4 +182,14 @@ function getGenderPercentagesArray(
   })
 
   return baseGenderPercentages
+}
+
+function normalizeUrlParam(param: string | string[], target?: 'string'): string
+function normalizeUrlParam(param: string | string[], target?: 'array'): string[]
+function normalizeUrlParam(
+  param: string | string[],
+  target: 'string' | 'array' = 'string',
+) {
+  if (target === 'array') return Array.isArray(param) ? param : [param]
+  else return Array.isArray(param) ? param[0] : param
 }

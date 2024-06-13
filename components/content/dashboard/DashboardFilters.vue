@@ -1,7 +1,10 @@
 <script setup lang="ts">
   import type { WatchStopHandle } from 'vue'
 
-  const { filters } = useDashboard()
+  // Setting filters initial value from url params
+  const { filters, readFiltersFromUrl } = useDashboard()
+  const url = useRequestURL()
+  readFiltersFromUrl(url)
 
   // Syncing filters with URL queries for users to share customized links easily
   const { storeFiltersToUrlWatcher } = useDashboard()
