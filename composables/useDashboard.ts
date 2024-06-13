@@ -184,12 +184,15 @@ function getGenderPercentagesArray(
   return baseGenderPercentages
 }
 
-function normalizeUrlParam(param: string | string[], target?: 'string'): string
-function normalizeUrlParam(param: string | string[], target?: 'array'): string[]
+type Param = string | string[] | undefined
+function normalizeUrlParam(param: Param, target?: 'string'): string
+function normalizeUrlParam(param: Param, target?: 'array'): string[]
 function normalizeUrlParam(
-  param: string | string[],
+  param: Param,
   target: 'string' | 'array' = 'string',
 ) {
+  if (!param) return target === 'array' ? [] : ''
+
   if (target === 'array') return Array.isArray(param) ? param : [param]
   else return Array.isArray(param) ? param[0] : param
 }
