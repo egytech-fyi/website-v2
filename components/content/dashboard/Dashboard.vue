@@ -1,13 +1,16 @@
 <script setup lang="ts">
   import { withoutTrailingSlash } from 'ufo'
+
+  // Getting data from the API
   const { apiUrl } = defineProps<{ apiUrl: string }>()
+  const { getDashboardData } = useDashboard()
+  const { data, error, status, execute } = getDashboardData(
+    withoutTrailingSlash(apiUrl),
+  )
 
   // Validating if a user selected at least one position
   const { filters } = useDashboard()
-
-  // Getting data from the API
-  const { getDashboardData } = useDashboard()
-  const { data, error, status } = getDashboardData(withoutTrailingSlash(apiUrl))
+  if (filters.value.personal.titles?.length) execute()
 
   // Copying url to clipboard
   const isCopied = ref(false)
