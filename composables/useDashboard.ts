@@ -198,6 +198,8 @@ export default function () {
       },
       {
         watch: [filtersParams],
+        immediate: false,
+        server: false,
       },
     )
   }
