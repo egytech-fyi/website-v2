@@ -27,28 +27,15 @@
   })
 
   // Salary Comment for the user to know how he ranks among the participants
+  const { compareSalaryWithParticipants } = useDashboard()
   const salaryComment = computed(() => {
     if (!data.value?.stats) return ''
 
     const salary = +filters.value.personal.salary
-    const { median, p20Compensation, p75Compensation, p90Compensation } =
-      data.value.stats
+    if (!salary)
+      return 'Enter your salary to see how you rank among the participants.'
 
-    if (!salary) {
-      return `Enter your salary to see how you rank among the participants.`
-    } else if (salary < p20Compensation) {
-      return `You are in the lower range of salaries. 80% of the participants earn more than you. Try using more filters to narrow the result to participants with the same criteria as you 🔍`
-    } else if (salary < median) {
-      return `You are in the lower range of salaries. 50% of the participants earn more than you. Try using more filters to narrow the result to participants with the same criteria as you 🔍`
-    } else if (salary < p75Compensation) {
-      return `You are in the upper range of salaries, earning more than 50% of the participants. Good job! 👏`
-    } else if (salary < p90Compensation) {
-      return `You are in the upper range of salaries, earning more than 75% of the participants. Great job! 👏`
-    } else if (salary >= p90Compensation) {
-      return `You earn more than 90% of the participants who took the survey. Bravo! 🚀`
-    } else {
-      return ''
-    }
+    return compareSalaryWithParticipants(salary, data.value.stats)
   })
 </script>
 
