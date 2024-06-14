@@ -12,5 +12,5 @@ This year, we've crafted an awesome dashboard to help you pinpoint your spot in 
   We don't store your answers, so be true to yourself for the best results.
 ::
 
-:Dashboard{.mt-4}
+:Dashboard{apiUrl="https://api.egytech.fyi/stats" .mt-4}
 

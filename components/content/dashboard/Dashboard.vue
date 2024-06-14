@@ -1,11 +1,13 @@
 <script setup lang="ts">
+  import { withoutTrailingSlash } from 'ufo'
+  const { apiUrl } = defineProps<{ apiUrl: string }>()
+
   // Validating if a user selected at least one position
   const { filters } = useDashboard()
 
   // Getting data from the API
   const { getDashboardData } = useDashboard()
-  const baseUrl = 'https://api.egytech.fyi/stats'
-  const { data, error, status } = getDashboardData(baseUrl)
+  const { data, error, status } = getDashboardData(withoutTrailingSlash(apiUrl))
 
   // Copying url to clipboard
   const isCopied = ref(false)
