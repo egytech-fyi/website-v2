@@ -30,15 +30,13 @@
     </UiCollapsibleTrigger>
 
     <UiCollapsibleContent>
-      <div>
-        <UiScrollArea
-          orientation="vertical"
-          class="z-30 hidden h-[calc(100vh-6.5rem)] overflow-y-auto pe-4 md:block lg:block"
-          type="hover"
-        >
-          <DashboardFilters />
-        </UiScrollArea>
-      </div>
+      <UiScrollArea
+        orientation="vertical"
+        class="h-[calc(100vh-6.5rem)] px-4 pb-8"
+        type="hover"
+      >
+        <DashboardFilters />
+      </UiScrollArea>
     </UiCollapsibleContent>
   </UiCollapsible>
 </template>
