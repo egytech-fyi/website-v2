@@ -88,6 +88,19 @@
     @apply bg-background text-foreground min-h-dvh text-sm font-inter;
   }
 
+  /*Custom Srollbar */
+  ::-webkit-scrollbar {
+    @apply size-2;
+  }
+  ::-webkit-scrollbar-track {
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-sm bg-border;
+  }
+  html {
+    scrollbar-color: hsl(var(--border));
+  }
+
   /* Hide arrows from input with type number */
   input[type='number']::-webkit-outer-spin-button,
   input[type='number']::-webkit-inner-spin-button {
