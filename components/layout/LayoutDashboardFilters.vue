@@ -1,7 +1,21 @@
 <script setup lang="ts">
+  import type { WatchStopHandle } from 'vue'
   defineProps<{ isSmall: boolean }>()
 
+  // Collapsible state
   const isOpen = ref(false)
+
+  // Hiding overflow on body when collapsible are open to prevent double scrolling
+  let unwatchCollapsible: WatchStopHandle
+  onMounted(() => {
+    unwatchCollapsible = watchEffect(() => {
+      document.body.style.overflow = isOpen.value ? 'hidden' : 'auto'
+    })
+  })
+  onUnmounted(() => {
+    unwatchCollapsible()
+    document.body.style.overflow = 'auto'
+  })
 </script>
 
 <template>
