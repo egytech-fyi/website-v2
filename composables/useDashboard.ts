@@ -143,7 +143,7 @@ export default function () {
       window.history.replaceState(
         window.history.state,
         '',
-        newURLQueries ? `?${newURLQueries}` : '',
+        newURLQueries ? `?${newURLQueries}` : window.location.pathname,
       )
     })
   }
