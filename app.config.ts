@@ -86,7 +86,7 @@ export default defineAppConfig({
     },
   },
 
-  shadcnDocs: () => ({
+  shadcnDocs: {
     header: {
       title: 'egytech.fyi',
       showTitle: true,
@@ -121,5 +121,5 @@ export default defineAppConfig({
       enable: true,
       title: 'On This Page',
     },
-  }),
+  },
 })
