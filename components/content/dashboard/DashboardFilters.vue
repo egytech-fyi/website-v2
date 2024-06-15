@@ -92,8 +92,8 @@
           <div class="relative">
             <UiInput
               id="salary"
-              v-model.trim="filters.personal.salary"
-              type="text"
+              v-model="filters.personal.salary"
+              type="number"
               class="pe-10"
             />
             <span
