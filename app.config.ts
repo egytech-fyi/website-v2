@@ -86,14 +86,12 @@ export default defineAppConfig({
     },
   },
 
-  // @ts-expect-error False positive as `shadcnDocs` isn't providing the correct types
   shadcnDocs: () => ({
     header: {
       title: 'egytech.fyi',
       showTitle: true,
       darkModeToggle: true,
       logo: { light: '/logo.svg', dark: '/logo.svg' },
-      nav: [],
       links: [
         {
           icon: 'lucide:github',
@@ -104,14 +102,15 @@ export default defineAppConfig({
     },
     search: { enable: true },
     aside: {
-      extraLinks: [
-        // {
-        //   title: 'Title',
-        //   icon: 'lucide:github',
-        //   to: 'https://github.com/egytech-fyi',
-        //   target: '_blank',
-        // },
-      ],
+      // Placeholder for how to show extra links in aside
+      // extraLinks: [
+      //   // {
+      //   //   title: 'Title',
+      //   //   icon: 'lucide:github',
+      //   //   to: 'https://github.com/egytech-fyi',
+      //   //   target: '_blank',
+      //   // },
+      // ],
     },
     main: {
       breadCrumb: true,
