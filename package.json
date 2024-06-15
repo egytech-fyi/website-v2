@@ -28,6 +28,7 @@
     "@nuxt/fonts": "^0.7.0",
     "@nuxtjs/seo": "2.0.0-rc.10",
     "@vueuse/core": "^10.10.0",
+    "@vueuse/nuxt": "^10.11.0",
     "apexcharts": "^3.49.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-tailwindcss": "^3.17.3",

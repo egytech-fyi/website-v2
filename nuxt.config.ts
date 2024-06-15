@@ -2,7 +2,13 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   extends: ['shadcn-docs-nuxt'],
-  modules: ['@nuxt/eslint', 'shadcn-nuxt', '@nuxt/fonts', '@nuxtjs/seo'],
+  modules: [
+    '@nuxt/eslint',
+    'shadcn-nuxt',
+    '@nuxt/fonts',
+    '@nuxtjs/seo',
+    '@vueuse/nuxt',
+  ],
 
   // SEO
   site: {
