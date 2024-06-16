@@ -74,9 +74,11 @@
 
     <div class="mt-4 space-y-3">
       <!-- Personal & Company Filters -->
-      <div class="grid grid-cols-[repeat(auto-fit,_minmax(180px,_1fr))] gap-6">
+      <div
+        class="grid grid-cols-[repeat(auto-fit,_minmax(180px,_1fr))] items-center gap-6 [&>*]:space-y-1.5"
+      >
         <!-- Title -->
-        <div class="grid w-full max-w-full items-center gap-1.5">
+        <div>
           <UiLabel class="font-normal" for="title">Title</UiLabel>
           <UiTagsCombobox
             v-model="filters.personal.titles"
@@ -86,7 +88,7 @@
         </div>
 
         <!-- Salary -->
-        <div class="grid w-full max-w-full items-center gap-1.5">
+        <div>
           <UiLabel class="font-normal" for="salary">Salary</UiLabel>
 
           <div class="relative">
@@ -105,7 +107,7 @@
         </div>
 
         <!-- Years of Experience -->
-        <div class="grid w-full max-w-full items-center gap-1.5">
+        <div>
           <UiLabel class="font-normal">Years of Experience</UiLabel>
 
           <!-- From -->
@@ -147,7 +149,7 @@
         </div>
 
         <!-- Level -->
-        <div class="grid w-full max-w-full items-center gap-1.5">
+        <div>
           <UiLabel class="font-normal" for="level">Level</UiLabel>
 
           <UiSelect id="level" v-model="filters.personal.level">
@@ -180,7 +182,7 @@
         </div>
 
         <!-- Gender -->
-        <div class="grid w-full max-w-full items-center gap-1.5">
+        <div>
           <UiLabel class="font-normal" for="gender">Gender</UiLabel>
 
           <UiSelect id="gender" v-model="filters.personal.gender">
@@ -196,7 +198,7 @@
         </div>
 
         <!-- Programming Language -->
-        <div class="grid w-full max-w-full items-center gap-1.5">
+        <div>
           <UiLabel class="font-normal" for="programmingLanguage">
             Programming Language
           </UiLabel>
@@ -229,7 +231,7 @@
         </div>
 
         <!-- CS Major -->
-        <div class="grid w-full max-w-full items-center gap-1.5">
+        <div>
           <UiLabel class="font-normal" for="csDegree">
             Are you a CS Major
           </UiLabel>
@@ -247,7 +249,7 @@
         </div>
 
         <!-- Company Business Line -->
-        <div class="grid w-full max-w-full items-center gap-1.5">
+        <div>
           <UiLabel class="font-normal" for="companyBusinessLine">
             Company Business Line
           </UiLabel>
@@ -269,7 +271,7 @@
         </div>
 
         <!-- Company Business Focus -->
-        <div class="grid w-full max-w-full items-center gap-1.5">
+        <div>
           <UiLabel class="font-normal" for="companyBusinessFocus">
             Company Business Focus
           </UiLabel>
@@ -290,7 +292,7 @@
         </div>
 
         <!-- Company Business Size -->
-        <div class="grid w-full max-w-full items-center gap-1.5">
+        <div>
           <UiLabel class="font-normal" for="companyBusinessSize">
             Company Business Size
           </UiLabel>
@@ -314,7 +316,7 @@
         </div>
 
         <!-- Company Business Market -->
-        <div class="grid w-full max-w-full items-center gap-1.5">
+        <div>
           <UiLabel class="font-normal" for="companyBusinessMarket">
             Company Business Market
           </UiLabel>
