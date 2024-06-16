@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  upate-contributors:
+  update-readme:
     runs-on: ubuntu-latest
 
     steps:
