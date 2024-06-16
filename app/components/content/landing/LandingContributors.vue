@@ -39,9 +39,10 @@
           <UiTooltip>
             <UiTooltipTrigger>
               <NuxtLink :to="contributor.link" target="_blank">
-                <img
+                <NuxtImg
                   :src="contributor.image"
                   :alt="contributor.name"
+                  placeholder="/user-img-placeholder.svg"
                   width="80"
                   height="80"
                   class="size-20 rounded"
