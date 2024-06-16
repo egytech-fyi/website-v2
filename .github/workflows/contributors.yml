@@ -1,0 +1,20 @@
+name: Contributors
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  upate-contributors:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v4
+
+      - name: Setup (Install Node, pnpm, and dependencies)
+        uses: ./.github/actions/setup
+
+      - name: Automd
+        run: pnpm run automd

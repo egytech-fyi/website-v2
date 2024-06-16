@@ -19,7 +19,8 @@
     "lint": "eslint . --cache",
     "lint:fix": "pnpm lint --fix",
     "format": "prettier . --check --cache",
-    "format:fix": "pnpm format --write"
+    "format:fix": "pnpm format --write",
+    "automd": "pnpm dlx automd@latest"
   },
   "dependencies": {
     "@antfu/eslint-config": "^2.21.1",
