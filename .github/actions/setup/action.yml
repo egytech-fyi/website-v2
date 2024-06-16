@@ -1,6 +1,12 @@
 name: Setup
 description: Install Node, pnpm, and dependencies.
 
+inputs:
+  install-deps:
+    description: Whether to install dependencies or not.
+    required: false
+    default: 'true'
+
 runs:
   using: composite
 
@@ -17,5 +23,6 @@ runs:
         cache: pnpm
 
     - name: Install dependencies
+      if: ${{ inputs.install-deps == 'true' }}
       run: pnpm install
       shell: bash

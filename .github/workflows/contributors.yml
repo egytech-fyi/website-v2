@@ -13,8 +13,10 @@ jobs:
       - name: Checkout current branch
         uses: actions/checkout@v4
 
-      - name: Setup (Install Node, pnpm, and dependencies)
+      - name: Setup (Install Node, pnpm)
         uses: ./.github/actions/setup
+        with:
+          install-deps: false
 
       - name: Automd
         run: pnpm run automd
