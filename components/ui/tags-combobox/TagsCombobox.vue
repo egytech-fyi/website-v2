@@ -1,10 +1,15 @@
 <script setup lang="ts">
   import {
     ComboboxAnchor,
+    ComboboxContent,
+    ComboboxEmpty,
+    ComboboxGroup,
     ComboboxInput,
+    ComboboxItem,
     ComboboxPortal,
     ComboboxRoot,
     ComboboxTrigger,
+    ComboboxViewport,
   } from 'radix-vue'
 
   type UiTagsComboboxProps = {
@@ -84,22 +89,28 @@
       </ComboboxAnchor>
 
       <ComboboxPortal>
-        <UiCommandList
+        <ComboboxContent
           position="popper"
-          class="mt-2 w-[--radix-popper-anchor-width] rounded-md border bg-popover text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2"
+          class="z-50 mt-2 max-h-[300px] w-[--radix-popper-anchor-width] overflow-y-auto overflow-x-hidden rounded-md border bg-popover text-popover-foreground shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2"
         >
-          <UiCommandEmpty />
-          <UiCommandGroup>
-            <UiCommandItem
-              v-for="option in filteredOptions"
-              :key="option.value"
-              :value="option.value"
-              @select.prevent="handleOptionSelect"
+          <ComboboxViewport>
+            <ComboboxEmpty class="py-6 text-center text-sm" />
+
+            <ComboboxGroup
+              class="[&_[cmdk-group-heading]]:text-muted-foreground, overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium"
             >
-              {{ option.label }}
-            </UiCommandItem>
-          </UiCommandGroup>
-        </UiCommandList>
+              <ComboboxItem
+                v-for="option in filteredOptions"
+                :key="option.value"
+                :value="option.value"
+                class="data-[disabled]:opacity-50, relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent"
+                @select.prevent="handleOptionSelect"
+              >
+                {{ option.label }}
+              </ComboboxItem>
+            </ComboboxGroup>
+          </ComboboxViewport>
+        </ComboboxContent>
       </ComboboxPortal>
     </ComboboxRoot>
   </UiTagsInput>
