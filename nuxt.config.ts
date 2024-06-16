@@ -9,6 +9,11 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
   ],
 
+  // Opt-in to Nuxt 4 features, remove when v4 is released
+  future: { compatibilityVersion: 4 },
+
+  shadcn: { componentDir: 'app/components/ui' },
+
   // SEO
   site: {
     // TODO: Set url in production to `https://egytech.fyi` when deployed
