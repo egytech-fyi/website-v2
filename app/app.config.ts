@@ -65,6 +65,9 @@ export default defineAppConfig({
     },
   },
 
+  // TODO: Replace 'https://api.egytech.fyi/doc' after fixing the invalid response
+  openAPISpecUrl: `https://cdn.jsdelivr.net/npm/@scalar/galaxy/dist/latest.yaml`,
+
   shadcnDocs: {
     header: {
       title: 'egytech.fyi',
