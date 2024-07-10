@@ -1,6 +1,7 @@
 <script setup lang="ts">
-  const { page } = useContent()
   const config = useConfig()
+  const { page } = useContent()
+  const isWidePage = computed(() => page.value?.wide ?? false)
 
   useSeoMeta({
     title: page.value?.title,
@@ -21,12 +22,13 @@
         >
           <LayoutAside :is-mobile="false" />
         </aside>
+
         <main
           class="relative py-6"
-          :class="[
-            config.toc.enable &&
-              'lg:grid lg:grid-cols-[1fr_200px] lg:gap-10 lg:py-8',
-          ]"
+          :class="{
+            'lg:grid lg:grid-cols-[1fr_200px] lg:gap-10 lg:py-8':
+              config.toc.enable && !isWidePage,
+          }"
         >
           <div class="mx-auto w-full min-w-0">
             <LayoutBreadcrumb
