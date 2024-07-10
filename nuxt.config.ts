@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['shadcn-docs-nuxt'],
+
   modules: [
     '@nuxt/eslint',
     'shadcn-nuxt',
@@ -22,6 +23,7 @@ export default defineNuxtConfig({
     description: `Explore the latest trends in the Egyptian tech market, analyze salaries, and get personalized negotiation strategies based on your CV.`,
     defaultLocale: 'en',
   },
+
   app: {
     head: {
       // Favicon
@@ -82,4 +84,5 @@ export default defineNuxtConfig({
   },
 
   devtools: { enabled: true },
+  compatibilityDate: '2024-07-10',
 })
