@@ -65,6 +65,8 @@ export default defineAppConfig({
     },
   },
 
+  openAPISpecUrl: `https://api.egytech.fyi/doc`,
+
   shadcnDocs: {
     header: {
       title: 'egytech.fyi',
