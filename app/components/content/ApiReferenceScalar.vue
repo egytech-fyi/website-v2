@@ -6,6 +6,7 @@
   const { openAPISpecUrl } = useAppConfig()
   const configuration: ReferenceConfiguration = {
     spec: { url: openAPISpecUrl },
+    searchHotKey: 'd',
   }
 </script>
 
