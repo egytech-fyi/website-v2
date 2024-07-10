@@ -16,7 +16,7 @@
 
 <style>
   .scalar-app {
-    /* Hide Scalar dark mode button in favour for our own */
+    /* Hide Scalar dark mode button in favour of our own */
     .darklight {
       display: none;
     }
