@@ -1,17 +1,41 @@
 <script setup lang="ts">
-  import type { ReferenceConfiguration } from '@scalar/api-reference'
-  import { ApiReference } from '@scalar/api-reference'
+  import type { ReferenceLayoutProps } from '@scalar/api-reference'
+  import { ApiReference, parse } from '@scalar/api-reference'
   import '@scalar/api-reference/style.css'
 
+  type OpenApiSpec = ReferenceLayoutProps['parsedSpec']
   const { openAPISpecUrl } = useAppConfig()
-  const configuration: ReferenceConfiguration = {
-    spec: { url: openAPISpecUrl },
-    searchHotKey: 'd',
-  }
+
+  // Fetching the OpenAPI specification
+  const openApiSpec = ref<OpenApiSpec | undefined>()
+  const loading = ref(true)
+  const error = ref(false)
+
+  onMounted(async () => {
+    const parsedSpec = await parse(openAPISpecUrl)
+    loading.value = false
+
+    if (!parsedSpec) return (error.value = true)
+    openApiSpec.value = parsedSpec
+  })
 </script>
 
 <template>
-  <ApiReference :configuration />
+  <div v-if="loading" class="space-y-8 py-20 text-center md:py-40">
+    <Icon name="Loading" class="size-20" />
+    <p>Fetching OpenAPI Spec from the backend...</p>
+  </div>
+
+  <div v-else-if="error" class="space-y-8 py-20 text-center md:py-40">
+    <Icon name="ph:link-break-duotone" class="size-20" />
+    <p>Something went wrong. Please try again later.</p>
+    <pre>{{ error }}</pre>
+  </div>
+
+  <ApiReference
+    v-else
+    :configuration="{ spec: { content: openApiSpec }, searchHotKey: 'd' }"
+  />
 </template>
 
 <style>
@@ -22,6 +46,7 @@
     }
 
     /* Matching Scalar documentation styles with ours */
+    
     --scalar-background-1: hsl(var(--background));
     --scalar-background-2: hsl(var(--secondary));
     --scalar-background-3: hsl(var(--background));
