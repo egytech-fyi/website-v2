@@ -46,9 +46,8 @@
     }
 
     /* Matching Scalar documentation styles with ours */
-    
     --scalar-background-1: hsl(var(--background));
-    --scalar-background-2: hsl(var(--secondary));
+    --scalar-background-2: hsl(var(--background));
     --scalar-background-3: hsl(var(--background));
     --scalar-border-color: hsl(var(--border));
     --scalar-background-accent: hsl(var(--muted));
