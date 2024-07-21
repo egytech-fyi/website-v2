@@ -7,7 +7,7 @@
   "homepage": "https://v2.egytech.fyi",
   "repository": "github.com:egytech-fyi/egytech-fyi",
   "engines": {
-    "node": ">=20.12.2",
+    "node": ">=20.15.1",
     "npm": "please-use-pnpm",
     "yarn": "please-use-pnpm"
   },
