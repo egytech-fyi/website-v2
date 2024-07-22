@@ -19,10 +19,10 @@ Help us to get more accurate data and make the Egyptian Tech Scene better by par
 
 <!-- automd:contributors author="MuhammadM1998" -->
 
-Made by [@MuhammadM1998](https://github.com/MuhammadM1998) and [community](https://github.com/egytech-fyi/egytech-fyi/graphs/contributors) 💛
+Made by [@MuhammadM1998](https://github.com/MuhammadM1998) and [community](https://github.com/egytech-fyi/website-v2/graphs/contributors) 💛
 <br><br>
-<a href="https://github.com/egytech-fyi/egytech-fyi/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=egytech-fyi/egytech-fyi" />
+<a href="https://github.com/egytech-fyi/website-v2/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=egytech-fyi/website-v2" />
 </a>
 
 <!-- /automd -->
