@@ -41,26 +41,12 @@ export default defineAppConfig({
     contribution: {
       formLink: `https://docs.google.com/forms/d/e/1FAIpQLSfKS-ZBzixfgOlsqpMEmn65_Em1Ek1-wOLXfhrXHORP9gsp0g/viewform?usp=sf_link`,
       contributors: [
-        {
-          name: 'Mahmoud Salem',
-          link: 'https://www.linkedin.com/in/mahsayedsalem/',
-          image: `https://media.licdn.com/dms/image/D4D03AQFrfwXJqWeyPQ/profile-displayphoto-shrink_200_200/0/1665492698888?e=2147483647&v=beta&t=Wae18SS9-9C1GM7ADQdZEiQbeq2S6mBZI6IVxvkosTc`,
-        },
-        {
-          name: 'Muhammad Mahmoud',
-          link: 'https://www.linkedin.com/in/MuhammadM1998/',
-          image: `https://media.licdn.com/dms/image/C4E03AQGFkvkd_R_1iw/profile-displayphoto-shrink_200_200/0/1640044080035?e=1721260800&v=beta&t=HBlUZXznT7_Aeank0e6OI8lky6fF05Dvgwc9a7WS00M`,
-        },
-        {
-          name: 'Abdelrahman El-Adawy',
-          link: 'https://www.linkedin.com/in/abdelrahman-el-adawy/',
-          image: `https://media.licdn.com/dms/image/D4E03AQFRhZTipZ7QfA/profile-displayphoto-shrink_800_800/0/1717713353227?e=1723075200&v=beta&t=hjevSlh6AldUEIwh-FaoFBiqjYTr46jxTcKCtXl9FGY`,
-        },
-        {
-          name: 'Ahmed El-Adawy',
-          link: 'https://www.linkedin.com/in/ahmed-eladawy-00b4a3115/',
-          image: `https://media.licdn.com/dms/image/D4D35AQFUiU2YRcflJA/profile-framedphoto-shrink_800_800/0/1699922152531?e=1718370000&v=beta&t=3j9O3kklyv3n2F7YetBm38EaBxFaJoHcyI0n33u5D9s`,
-        },
+        // Placeholder object for types only
+        // {
+        //   name: 'Muhammad Mahmoud',
+        //   link: 'https://www.linkedin.com/in/MuhammadM1998/',
+        //   image: `https://media.licdn.com/dms/image/C4E03AQGFkvkd_R_1iw/profile-displayphoto-shrink_200_200/0/1640044080035?e=1721260800&v=beta&t=HBlUZXznT7_Aeank0e6OI8lky6fF05Dvgwc9a7WS00M`,
+        // },
       ],
     },
   },

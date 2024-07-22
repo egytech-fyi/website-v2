@@ -1,6 +1,4 @@
-<script setup lang="ts">
-  const { landing } = useAppConfig()
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <section
@@ -29,29 +27,28 @@
       </UiLink>
     </div>
 
-    <ul class="grid grid-cols-2 justify-center gap-4 xs:grid-cols-4">
+    <ul
+      class="grid grid-cols-2 justify-center gap-4 2xs:grid-cols-3 xs:grid-cols-4"
+    >
       <li
-        v-for="(contributor, index) in landing.contribution.contributors"
-        :key="index"
+        v-for="contributorPlaceholder in 8"
+        :key="contributorPlaceholder"
         class="w-fit justify-self-center"
       >
         <UiTooltipProvider :delay-duration="20">
           <UiTooltip>
             <UiTooltipTrigger>
-              <NuxtLink :to="contributor.link" target="_blank">
-                <NuxtImg
-                  :src="contributor.image"
-                  :alt="contributor.name"
-                  placeholder="/user-img-placeholder.svg"
-                  width="80"
-                  height="80"
-                  class="size-20 rounded"
-                />
-              </NuxtLink>
+              <NuxtImg
+                src="/user-img-placeholder.svg"
+                aria-hidden
+                width="80"
+                height="80"
+                class="size-20 rounded"
+              />
             </UiTooltipTrigger>
 
             <UiTooltipContent>
-              <p>{{ contributor.name }}</p>
+              <p>This could be you!</p>
             </UiTooltipContent>
           </UiTooltip>
         </UiTooltipProvider>
