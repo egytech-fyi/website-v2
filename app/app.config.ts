@@ -88,5 +88,6 @@ export default defineAppConfig({
       enable: true,
       title: 'On This Page',
     },
+    site: { ogImage: '/og-image.png' },
   },
 })
