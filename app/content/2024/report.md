@@ -451,7 +451,7 @@ Around 37% of the participants with more than one year of experience, changed co
 
 ### Salaries Across The Years
 
-We wanted to know how to tech salaries are moving with currency devaluation, using Egyptian Geeks 2017 report and our reports from previous years.
+We wanted to know how tech salaries are moving with currency devaluation, using Egyptian Geeks 2017 report and our reports from previous years.
 Although tech salaries have risen, they are barely keeping pace with the devaluation of the Egyptian pound. 💵
 
 <ContentChartPie 
