@@ -188,7 +188,7 @@ The majority of the participants are working in Small and Medium Enterprises.
 
 ### Location
 
-As expected, 74% of participants working in companies located in Cairo!.
+As expected, 74% of participants are working in companies located in Cairo!
 
 <ContentChartPie 
   :labels='[
