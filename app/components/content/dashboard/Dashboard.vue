@@ -8,9 +8,11 @@
     withoutTrailingSlash(apiUrl),
   )
 
-  // Validating if a user selected at least one position
+  // Fetching data on mount
   const { filters } = useDashboard()
-  if (filters.value.personal.titles?.length) execute()
+  onMounted(() => {
+    execute()
+  })
 
   // Copying url to clipboard
   const isCopied = ref(false)
@@ -43,7 +45,7 @@
   <!-- Empty Filters -->
   <div
     v-if="!filters.personal.titles?.length"
-    class="space-y-8 py-20 text-center md:py-40"
+    class="mt-4 space-y-8 py-20 text-center md:py-40"
   >
     <Icon name="ph:shooting-star-duotone" class="size-20" />
     <p>Select at least one title to get started.</p>
@@ -52,14 +54,14 @@
   <!-- Loading -->
   <div
     v-else-if="status === 'pending'"
-    class="space-y-8 py-20 text-center md:py-40"
+    class="mt-4 space-y-8 py-20 text-center md:py-40"
   >
     <Icon name="Loading" class="size-20" />
     <p>Fetching data from the backend...</p>
   </div>
 
   <!-- Error -->
-  <div v-else-if="error" class="space-y-8 py-20 text-center md:py-40">
+  <div v-else-if="error" class="mt-4 space-y-8 py-20 text-center md:py-40">
     <div class="!text-6xl text-red-600 dark:text-red-800">
       <Icon name="ph:link-break-duotone" class="size-20" />
       <ProseH1>Oops!</ProseH1>
@@ -86,7 +88,7 @@
   </div>
 
   <!-- Results -->
-  <div v-else-if="data" class="space-y-16 pt-8">
+  <div v-else-if="data" class="mt-4 space-y-16 pt-8">
     <!-- Share results -->
     <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
       <p class="text-start">

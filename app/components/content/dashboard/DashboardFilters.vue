@@ -52,10 +52,6 @@
     { label: 'Systems Architect', value: 'system_arch' },
     { label: 'Technical Support', value: 'technical_support' },
   ]
-
-  // TODO: Remove this when resolved in radix-vue
-  // Number Field components crashes when opening the page directly as `window` is not defined
-  const windowAvailable = computed(() => window)
 </script>
 
 <template>
@@ -111,7 +107,7 @@
         </div>
 
         <!-- Years of Experience -->
-        <div v-if="windowAvailable">
+        <div>
           <UiLabel class="font-normal">Years of Experience</UiLabel>
 
           <!-- From -->
