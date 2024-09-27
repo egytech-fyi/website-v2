@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        If your question is related to contributiong to the project, please make sure that you have read through our [contribution guide](https://egytech-fyi.pages.dev/community/contribute).
+        If your question is related to contributiong to the project, please make sure that you have read through our [contribution guide](https://v2.egytech.fyi/community/contribute).
 
   - type: textarea
     attributes:
