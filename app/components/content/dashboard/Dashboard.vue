@@ -8,9 +8,11 @@
     withoutTrailingSlash(apiUrl),
   )
 
-  // Validating if a user selected at least one position
+  // Fetching data on mount
   const { filters } = useDashboard()
-  if (filters.value.personal.titles?.length) execute()
+  onMounted(() => {
+    execute()
+  })
 
   // Copying url to clipboard
   const isCopied = ref(false)
