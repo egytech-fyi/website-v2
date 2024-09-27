@@ -9,11 +9,7 @@
 </script>
 
 <template>
-  <div>
-    <LayoutHeader />
-    <div class="container px-4 py-6 md:px-8">
-      <ContentRenderer :key="page._id" :value="page" />
-    </div>
-    <LayoutFooter />
+  <div class="container px-4 py-6 md:px-8">
+    <ContentRenderer :key="page._id" :value="page" />
   </div>
 </template>
