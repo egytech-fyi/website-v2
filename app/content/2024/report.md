@@ -478,21 +478,30 @@ We asked the participants about their salary satisfaction 😊. More than 50% th
   :series='[30.3, 54.2, 1.6, 13.9]'>
 </ContentChartPie>
 
-#### Salary Salary Satisfaction by Gender
+#### Salary Satisfaction by Gender
 
 We wanted to see the gender distribution between these answers 👩🏽 👨🏼
 
 <ContentChartBar
   :y-axis-percentage='true'
-  :labels='["Yes", "No, I should earn more", "No, I should earn less", "Not sure"]'
+  :stacked='true'
+  :labels='["Male", "Female"]'
   :series='[
     {
-      "name": "Male",
-      "data": [30.7, 55.3, 1.8, 12.2]
+      "name": "Yes",
+      "data": [30.7, 27.4]
     },
     {
-      "name": "Female",
-      "data": [27.4, 52.2, 1.4, 18.7]
+      "name": "No, I should be in a higher level more",
+      "data": [55.3, 52.2]
+    },
+    {
+      "name": "No, I should be in a lesser level",
+      "data": [1.8, 1.4]
+    },
+    {
+      "name": "Not sure",
+      "data": [12.2, 19.0]
     }
   ]'>
 </ContentChartBar>
@@ -503,15 +512,24 @@ More 61% of the participants think they are placed in the level they deserve �
 
 <ContentChartBar
   :y-axis-percentage='true'
-  :labels='["Yes", "No, I should be in a higher level more", "No, I should be in a lesser level", "Not sure"]'
+  :stacked='true'
+  :labels='["Male", "Female"]'
   :series='[
     {
-      "name": "Male",
-      "data": [62.1, 25.6, 3, 9.4]
+      "name": "Yes",
+      "data": [62.1, 60.7]
     },
     {
-      "name": "Female",
-      "data": [60.7, 22.2, 2, 15.2]
+      "name": "No, I should be in a higher level more",
+      "data": [25.6, 22.2]
+    },
+    {
+      "name": "No, I should be in a lesser level",
+      "data": [3, 2]
+    },
+    {
+      "name": "Not sure",
+      "data": [9.3, 15.1]
     }
   ]'>
 </ContentChartBar>

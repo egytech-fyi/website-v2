@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { defu } from 'defu'
   import type { ApexOptions } from 'apexcharts'
+
   const {
     series = [],
     labels = [],
@@ -11,11 +12,8 @@
     options?: ApexOptions
   }>()
 
-  const slicesLabels = computed(() => labels)
-
-  // @ts-expect-error todo: fix types
   const mergedOptions = computed<ApexOptions>(() =>
-    defu(options, { chart: { type: 'pie' }, labels: slicesLabels.value }),
+    defu(options, { chart: { type: 'pie' as const }, labels }),
   )
 </script>
 

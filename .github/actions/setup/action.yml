@@ -12,7 +12,9 @@ runs:
 
   steps:
     - name: Enable corepack
-      run: corepack enable
+      run: |
+        npm i -g --force corepack # TODO: remove when https://github.com/actions/setup-node/issues/1222 is resolved
+        corepack enable
       shell: bash
 
     - name: Setup node & pnpm
