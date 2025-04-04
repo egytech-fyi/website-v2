@@ -1,5 +1,7 @@
 <script setup lang="ts">
-  const { currentYear } = useContentDateUtils()
+  const { getAvailableContentYears } = useContentDateUtils()
+  const availableContentYears = await getAvailableContentYears()
+  const latestYear = availableContentYears[0]
 </script>
 
 <template>
@@ -14,7 +16,7 @@
         keeping pace with the devaluation of the Egyptian pound?
       </p>
 
-      <UiLink :to="`/${currentYear}/report`" variant="secondary">
+      <UiLink :to="`/${latestYear}/report`" variant="secondary">
         <Icon name="ph:chart-pie-duotone" class="size-5" />
         <span class="ms-2">Read our Full Report</span>
       </UiLink>

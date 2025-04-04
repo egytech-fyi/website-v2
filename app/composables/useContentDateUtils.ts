@@ -28,8 +28,6 @@ export default function () {
     return /^\/?\d{4}$/.test(path)
   }
 
-  const currentYear = new Date().getFullYear().toString()
-
   const currentPathYear = computed(() => {
     return parseContentPathYear(route.path).pathYear
   })
@@ -43,7 +41,6 @@ export default function () {
   })
 
   return {
-    currentYear,
     currentPathYear,
     currentPathWithoutYear,
     isInsideYearDir,
