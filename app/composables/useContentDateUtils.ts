@@ -6,7 +6,7 @@ export default function () {
     // Removing the first slash then splitting by slash gives us an array of <year> <rest_of_the_path>
     const [pathYear, pathWithoutYear] = path.substring(1).split('/')
     return {
-      pathYear: isPathContainsYear(pathYear) ? pathYear : '',
+      pathYear: isPathContainsYear(pathYear || '') ? pathYear : '',
       pathWithoutYear,
     }
   }
@@ -18,7 +18,7 @@ export default function () {
     for (const contentPath of contentPaths) {
       if (!contentPath._path || !isPathContainsYear(contentPath._dir)) continue
       const { pathYear } = parseContentPathYear(contentPath._path)
-      contentYears.add(pathYear)
+      if (pathYear) contentYears.add(pathYear)
     }
 
     return Array.from(contentYears).reverse()
@@ -39,7 +39,7 @@ export default function () {
   })
 
   const isInsideYearDir = computed(() => {
-    return isPathContainsYear(currentPathYear.value)
+    return isPathContainsYear(currentPathYear.value || '')
   })
 
   return {
