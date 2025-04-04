@@ -46,6 +46,7 @@
 
       <UiLink
         to="/community/participate"
+        alt="Participate in the survey"
         class="card-cta gap-2"
         variant="outline"
       >

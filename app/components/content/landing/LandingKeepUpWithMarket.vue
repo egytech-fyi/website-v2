@@ -16,7 +16,11 @@
         keeping pace with the devaluation of the Egyptian pound?
       </p>
 
-      <UiLink :to="`/${latestYear}/report`" variant="secondary">
+      <UiLink
+        :to="`/${latestYear}/report`"
+        alt="Read our full report"
+        variant="secondary"
+      >
         <Icon name="ph:chart-pie-duotone" class="size-5" />
         <span class="ms-2">Read our Full Report</span>
       </UiLink>

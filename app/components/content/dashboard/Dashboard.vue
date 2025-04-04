@@ -81,7 +81,12 @@
       We have no results for the selected filters. You can be the first one!
     </p>
 
-    <UiLink to="/community/participate" class="h-9 gap-2" variant="outline">
+    <UiLink
+      to="/community/participate"
+      alt="Participate in the survey"
+      class="h-9 gap-2"
+      variant="outline"
+    >
       <Icon name="ph:pencil-simple-duotone" class="size-5" />
       Participate in Survey
     </UiLink>
